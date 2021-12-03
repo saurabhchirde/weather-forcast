@@ -5,9 +5,12 @@ const inputCity = document.querySelector(".inputCity");
 const apiUrl =
   "http://api.weatherapi.com/v1/current.json?key=dbb97da661744d27b6b80803210312&q=";
 
-btnCheck.addEventListener("click", () => {
+const imageApi = "https://api.unsplash.com/search/photos?query=";
+
+function findWeather() {
   const txt = inputCity.value;
   const fullApiUrl = apiUrl + txt + "&aqi=yes";
+
   if (txt === "" || txt === " ") {
     output.innerText = "Enter a city name! ";
   } else {
@@ -27,8 +30,21 @@ btnCheck.addEventListener("click", () => {
         var wind_dir = json.current.wind_dir;
         var wind = json.current.wind_kph;
         var humid = json.current.humidity;
+        // var season = partial.replace(" ", "");
+        // const fullImgApi =
+        //   imageApi +
+        //   season +
+        //   "&client_id=9kvb2pRRvKu2HUIy1cBVjsnRVC9wjPkBSlujgUAqwI4";
 
         output.innerText = `Location: ${city}, ${region}, ${country}\nLatitude: ${lat} , Longitude: ${long}\n${partial}\nCurrent Temp: ${temp}˚C, Feels like: ${feelsLike}˚C\nWind: ${wind_dir}, ${wind} km/h, Humidity: ${humid}%\nDate & Time: ${cDate}\nTime zone: ${tz}`;
+
+        // fetch(fullImgApi)
+        //   .then((response) => response.json())
+        //   .then((json) => {
+        //     document.body.style.backgroundImage = json.results[2].urls.full;
+        //   });
       });
   }
-});
+}
+
+btnCheck.addEventListener("click", findWeather);
