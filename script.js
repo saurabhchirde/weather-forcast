@@ -2,6 +2,18 @@ const btnCheck = document.querySelector("#btnCheck");
 const output = document.querySelector(".output");
 const inputCity = document.querySelector(".inputCity");
 const bgImg = document.querySelector("#bgImg");
+const locationEl = document.querySelector(".location");
+const latitudeLongitudeEl = document.querySelector(".latitudeLongitude");
+const temperatureEL = document.querySelector(".temperature");
+const windEl = document.querySelector(".wind");
+const humidityEl = document.querySelector(".humidity");
+const dateTimeEl = document.querySelector(".dateTime");
+const timeZoneEl = document.querySelector(".timeZone");
+const overall = document.querySelector(".overall");
+const footerEl = document.querySelector(".footer");
+
+overall.classList.remove("bglight");
+locationEl.classList.remove("bglight");
 
 const apiUrl =
   "https://api.weatherapi.com/v1/current.json?key=dbb97da661744d27b6b80803210312&q=";
@@ -12,9 +24,7 @@ function findWeather() {
   const txt = inputCity.value;
   const fullApiUrl = apiUrl + txt + "&aqi=yes";
 
-  if (txt === "") {
-    output.innerText = "Enter a city name! ";
-  } else {
+  if (txt !== "") {
     fetch(fullApiUrl)
       .then((response) => response.json())
       .then((json) => {
@@ -32,7 +42,17 @@ function findWeather() {
         var wind = json.current.wind_kph;
         var humid = json.current.humidity;
 
-        output.innerText = `Location: ${city}, ${region}, ${country}\nLatitude: ${lat} , Longitude: ${long}\n${partial}\nCurrent Temp: ${temp}˚C, Feels like: ${feelsLike}˚C\nWind: ${wind_dir}, ${wind} km/h, Humidity: ${humid}%\nDate & Time: ${cDate}\nTime zone: ${tz}`;
+        overall.innerText = `" ${partial} "`;
+        overall.classList.add("bglight");
+        locationEl.innerText = `🌎 ${city}, ${region}, ${country}`;
+        locationEl.classList.add("bglight");
+        latitudeLongitudeEl.innerText = `Latitude: ${lat} \nLongitude: ${long}`;
+        temperatureEL.innerText = `🌡 Current Temp: ${temp}˚C \nFeels like: ${feelsLike}˚C`;
+        windEl.innerText = `Wind: ${wind_dir}, ${wind} km/h 🍃 `;
+        humidityEl.innerText = `Humidity: ${humid}%`;
+        dateTimeEl.innerText = `⏱ Date & Time: ${cDate}`;
+        timeZoneEl.innerText = `Time zone: ${tz}`;
+        footerEl.innerText = " ©️ Saurabh Chirde";
 
         var onlyTime = cDate.slice(-5);
 
@@ -58,6 +78,8 @@ function findWeather() {
             bgImg.src = json.results[randomImage].urls.regular;
           });
       });
+  } else {
+    output.innerText = "Enter a city name! ";
   }
 }
 
