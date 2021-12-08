@@ -57,7 +57,7 @@ function findWeather() {
         var onlyTime = cDate.slice(-5);
 
         var season = partial.replace(" ", "-");
-        if (onlyTime > "18:00") {
+        if (onlyTime > "18:00" || onlyTime < "04:00") {
           var fullImgApi =
             imageApi +
             season +
