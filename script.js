@@ -12,7 +12,7 @@ function findWeather() {
   const txt = inputCity.value;
   const fullApiUrl = apiUrl + txt + "&aqi=yes";
 
-  if (txt === "" || txt === " ") {
+  if (txt === "") {
     output.innerText = "Enter a city name! ";
   } else {
     fetch(fullApiUrl)
