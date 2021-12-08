@@ -93,4 +93,7 @@ button {
     width: 82%;
     padding: 10px 80px;
   }
+  .output {
+    width: 100%;
+  }
 }
