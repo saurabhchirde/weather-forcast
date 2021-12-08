@@ -38,14 +38,12 @@ function findWeather() {
 
         var season = partial.replace(" ", "-");
         if (onlyTime > "18:00") {
-          console.log("greater than 18");
           var fullImgApi =
             imageApi +
             season +
             "-night" +
             "&client_id=9kvb2pRRvKu2HUIy1cBVjsnRVC9wjPkBSlujgUAqwI4";
         } else {
-          console.log("less than 18");
           var fullImgApi =
             imageApi +
             season +
@@ -58,7 +56,6 @@ function findWeather() {
           .then((response) => response.json())
           .then((json) => {
             bgImg.src = json.results[randomImage].urls.regular;
-            console.log(json.results[randomImage].urls.regular);
           });
       });
   }
