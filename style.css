@@ -55,9 +55,13 @@ button {
   font-size: 1.4rem;
   line-height: 2rem;
 }
-@media screen and (max-width: 640px) {
+@media screen and (max-width: 520px) {
   h1 {
     font-size: 2rem;
+  }
+  #bgImg {
+    width: 520px;
+    object-fit: cover;
   }
   .container {
     left: 1%;
