@@ -34,11 +34,25 @@ function findWeather() {
 
         output.innerText = `Location: ${city}, ${region}, ${country}\nLatitude: ${lat} , Longitude: ${long}\n${partial}\nCurrent Temp: ${temp}˚C, Feels like: ${feelsLike}˚C\nWind: ${wind_dir}, ${wind} km/h, Humidity: ${humid}%\nDate & Time: ${cDate}\nTime zone: ${tz}`;
 
+        var onlyTime = cDate.slice(-5);
+
         var season = partial.replace(" ", "-");
-        const fullImgApi =
-          imageApi +
-          season +
-          "&client_id=9kvb2pRRvKu2HUIy1cBVjsnRVC9wjPkBSlujgUAqwI4";
+        if (onlyTime > "18:00") {
+          console.log("greater than 18");
+          var fullImgApi =
+            imageApi +
+            season +
+            "-night" +
+            "&client_id=9kvb2pRRvKu2HUIy1cBVjsnRVC9wjPkBSlujgUAqwI4";
+        } else {
+          console.log("less than 18");
+          var fullImgApi =
+            imageApi +
+            season +
+            "-day" +
+            "&client_id=9kvb2pRRvKu2HUIy1cBVjsnRVC9wjPkBSlujgUAqwI4";
+        }
+
         let randomImage = Math.trunc(Math.random() * 10);
         fetch(fullImgApi)
           .then((response) => response.json())
