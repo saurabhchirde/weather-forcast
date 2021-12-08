@@ -34,7 +34,7 @@ function findWeather() {
 
         output.innerText = `Location: ${city}, ${region}, ${country}\nLatitude: ${lat} , Longitude: ${long}\n${partial}\nCurrent Temp: ${temp}˚C, Feels like: ${feelsLike}˚C\nWind: ${wind_dir}, ${wind} km/h, Humidity: ${humid}%\nDate & Time: ${cDate}\nTime zone: ${tz}`;
 
-        var season = partial.replace(" ", "");
+        var season = partial.replace(" ", "-");
         const fullImgApi =
           imageApi +
           season +
