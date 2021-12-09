@@ -12,6 +12,7 @@ body {
 }
 .lgContainer {
   display: flex;
+  justify-content: center;
   margin: auto;
   text-align: center;
 }
@@ -20,7 +21,7 @@ body {
   left: 2%;
   right: 2%;
   max-width: 700px;
-  height: 600px;
+  height: 700px;
   margin: auto;
   padding: 2% 4% 3%;
   background-color: rgba(0, 0, 0, 0.4);
@@ -63,8 +64,9 @@ button {
   font-weight: bold;
   margin: -2rem auto 1rem auto;
 }
-hr {
+.hrVisible {
   margin: -1rem auto auto;
+  border-top: 1px solid white;
 }
 .location {
   text-align: center;
@@ -81,30 +83,30 @@ hr {
 .latitudeLongitude {
   left: 3rem;
   line-height: 2.2rem;
-  top: 27rem;
+  top: 28.3rem;
   text-align: left;
 }
 .wind {
-  top: 31.7rem;
+  top: 33rem;
   left: 3rem;
 }
 .temperature {
-  top: 27rem;
+  top: 28.3rem;
   line-height: 2.2rem;
   right: 3rem;
   text-align: right;
 }
 .humidity {
-  top: 31.7rem;
+  top: 33rem;
   right: 3.1rem;
 }
 .dateTime {
-  top: 35.3rem;
+  top: 35.5rem;
   right: 3rem;
 }
 
 .timeZone {
-  top: 35.3rem;
+  top: 35.5rem;
   left: 3rem;
 }
 
@@ -115,40 +117,165 @@ hr {
 }
 .footer {
   position: absolute;
-  top: 39.4rem;
-  font-size: 0.8rem;
+  top: 42.4rem;
+  font-size: 0.9rem;
   right: 4rem;
-  color: rgb(181, 181, 181);
+  color: rgb(220, 220, 220);
 }
+@media screen and (max-width: 720px) {
+  h1 {
+    font-size: 2.2rem;
+  }
+  #bgImg {
+    width: 720px;
+    height: 800px;
+  }
+  .lgContainer {
+    height: 750px;
+    width: 50px;
+  }
+  .container {
+    left: 5%;
+    right: 5%;
+    height: 100%;
+    margin: 0;
+    padding: 1rem auto;
+    /* border-radius: 0px; */
+  }
+
+  input {
+    width: 250px;
+    font-size: 1.1rem;
+  }
+  button {
+    width: 80%;
+    padding: 10px 80px;
+  }
+  .details {
+    font-size: 1.3rem;
+  }
+  .overall {
+    font-size: 2.2rem;
+    font-weight: 300;
+  }
+
+  .location {
+    font-weight: 300;
+    font-size: 1.4rem;
+  }
+
+  .latitudeLongitude {
+    left: 1.1rem;
+    top: 26.3rem;
+  }
+  .wind {
+    top: 31rem;
+    left: 1.1rem;
+  }
+  .temperature {
+    top: 26.3rem;
+    right: 1.1rem;
+  }
+  .humidity {
+    top: 31rem;
+    right: 1.1rem;
+  }
+  .dateTime {
+    top: 35.5rem;
+    right: 1.1rem;
+    font-size: 1.2rem;
+  }
+
+  .timeZone {
+    font-size: 1.2rem;
+    top: 35.5rem;
+    left: 1.1rem;
+  }
+
+  .footer {
+    top: 43.4rem;
+    font-size: 0.9rem;
+    right: 2.2rem;
+  }
+  .output {
+    width: 100%;
+  }
+}
+
 @media screen and (max-width: 520px) {
   h1 {
     font-size: 2.2rem;
   }
   #bgImg {
     width: 520px;
-    height: 900px;
-    object-fit: cover;
+    height: 800px;
+  }
+  .lgContainer {
+    height: 770px;
+    width: 520px;
   }
   .container {
-    left: 1%;
-    right: 1%;
-    max-width: 100%;
+    left: 0%;
+    right: 0%;
     height: 100%;
+    margin: 0;
     padding: 1rem auto;
     border-radius: 0px;
-    background-color: rgba(0, 0, 0, 0.4);
   }
-  .inputField {
-    width: 100%;
-  }
+
   input {
     width: 200px;
     font-size: 1rem;
   }
   button {
-    font-size: 1.5rem;
     width: 82%;
     padding: 10px 80px;
+  }
+  .details {
+    font-size: 1.2rem;
+  }
+  .overall {
+    font-size: 2rem;
+    font-weight: 300;
+  }
+
+  .location {
+    font-weight: 300;
+    font-size: 1.3rem;
+  }
+
+  .latitudeLongitude {
+    left: 0.5rem;
+    top: 26.3rem;
+  }
+  .wind {
+    top: 31rem;
+    left: 0.5rem;
+  }
+  .temperature {
+    top: 26.3rem;
+    right: 0.5rem;
+  }
+  .humidity {
+    top: 31rem;
+    right: 0.5rem;
+  }
+  .dateTime {
+    top: 35.5rem;
+    right: 0.5rem;
+    font-size: 1rem;
+  }
+
+  .timeZone {
+    font-size: 1rem;
+    top: 35.5rem;
+    left: 0.5rem;
+  }
+
+  .footer {
+    top: 41.4rem;
+    font-size: 0.8rem;
+    right: 1.5rem;
   }
   .output {
     width: 100%;
