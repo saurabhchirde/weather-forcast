@@ -8,11 +8,13 @@ const temperatureEL = document.querySelector(".temperature");
 const windEl = document.querySelector(".wind");
 const humidityEl = document.querySelector(".humidity");
 const dateTimeEl = document.querySelector(".dateTime");
-const timeZoneEl = document.querySelector(".timeZone");
+const dateEl = document.querySelector(".onlyDate");
+const timeEl = document.querySelector(".onlyTime");
 const overall = document.querySelector(".overall");
 const footerEl = document.querySelector(".footer");
 const hrEl = document.querySelector(".hr");
 const iconEl = document.querySelector(".icon");
+
 var iconTime = "day";
 
 overall.classList.remove("bglight");
@@ -45,6 +47,9 @@ function fetchApi(fullApiUrl) {
       const wind = json.current.wind_kph;
       const humid = json.current.humidity;
 
+      const oDate = cDate.slice(0, 10);
+      const oTime = cDate.slice(-5);
+
       hrEl.classList.add("hrVisible");
       overall.innerText = `" ${partial} "`;
       overall.classList.add("bglight");
@@ -55,15 +60,14 @@ function fetchApi(fullApiUrl) {
       temperatureEL.innerText = `🌡 Current Temp: ${temp}˚C \nFeels like: ${feelsLike}˚C`;
       windEl.innerText = `Wind: ${wind_dir}, ${wind} km/h 🍃 `;
       humidityEl.innerText = `Humidity: ${humid}%`;
-      dateTimeEl.innerText = `⏱ Date & Time: ${cDate}`;
-      timeZoneEl.innerText = `Time zone: ${tz}`;
+      dateEl.innerText = `Date : ${oDate}`;
+      timeEl.innerText = `Time: ${oTime}, ${tz}`;
       footerEl.innerText = "with ❤️ by Saurabh Chirde";
 
-      const onlyTime = cDate.slice(-5);
       const season = partial.replace(" ", "-");
       const iconSrc = json.current.condition.icon.slice(-7);
 
-      if (onlyTime > "18:00" || onlyTime < "04:00") {
+      if (oTime > "18:00" || oTime < "04:00") {
         iconTime = "night";
         iconEl.innerHTML =
           '<img src="icons/' + iconTime + "/" + iconSrc + '"/></img>';
