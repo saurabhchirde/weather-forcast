@@ -40,6 +40,7 @@ function fetchApi(fullApiUrl) {
       const wind = json.current.wind_kph;
       const humid = json.current.humidity;
 
+      hrEl.classList.add("hrVisible");
       overall.innerText = `" ${partial} "`;
       overall.classList.add("bglight");
       locationEl.innerText = `🌎 ${city}, ${region}, ${country}`;
@@ -77,6 +78,9 @@ function fetchApi(fullApiUrl) {
         .then((json) => {
           bgImg.src = json.results[randomImage].urls.regular;
         });
+    })
+    .catch(() => {
+      output.innerText = "Enter a valid city name ! ";
     });
 }
 
@@ -85,7 +89,6 @@ function findWeather() {
   const fullApiUrl = apiUrl + txt + "&aqi=yes";
 
   if (txt !== "") {
-    hrEl.classList.add("hrVisible");
     fetchApi(fullApiUrl);
   } else {
     output.innerText = "Enter a city name! ";
