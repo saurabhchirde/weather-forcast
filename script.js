@@ -12,6 +12,8 @@ const timeZoneEl = document.querySelector(".timeZone");
 const overall = document.querySelector(".overall");
 const footerEl = document.querySelector(".footer");
 const hrEl = document.querySelector(".hr");
+const iconEl = document.querySelector(".icon");
+var iconTime = "day";
 
 overall.classList.remove("bglight");
 locationEl.classList.remove("bglight");
@@ -48,6 +50,7 @@ function fetchApi(fullApiUrl) {
       overall.classList.add("bglight");
       locationEl.innerText = `🌎 ${city}, ${region}, ${country}`;
       locationEl.classList.add("bglight");
+
       latitudeLongitudeEl.innerText = `Latitude: ${lat} \nLongitude: ${long}`;
       temperatureEL.innerText = `🌡 Current Temp: ${temp}˚C \nFeels like: ${feelsLike}˚C`;
       windEl.innerText = `Wind: ${wind_dir}, ${wind} km/h 🍃 `;
@@ -58,8 +61,12 @@ function fetchApi(fullApiUrl) {
 
       const onlyTime = cDate.slice(-5);
       const season = partial.replace(" ", "-");
+      const iconSrc = json.current.condition.icon.slice(-7);
 
       if (onlyTime > "18:00" || onlyTime < "04:00") {
+        iconTime = "night";
+        iconEl.innerHTML =
+          '<img src="icons/' + iconTime + "/" + iconSrc + '"/></img>';
         var fullImgApi =
           imageApi +
           season +
@@ -67,6 +74,9 @@ function fetchApi(fullApiUrl) {
           "-landscape" +
           "&client_id=9kvb2pRRvKu2HUIy1cBVjsnRVC9wjPkBSlujgUAqwI4";
       } else {
+        iconTime = "day";
+        iconEl.innerHTML =
+          '<img src="icons/' + iconTime + "/" + iconSrc + '"/></img>';
         var fullImgApi =
           imageApi +
           season +
