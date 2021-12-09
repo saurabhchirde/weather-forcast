@@ -108,11 +108,9 @@ button {
   left: 3rem;
   top: 35.5rem;
 }
-/* .dateTime {
-  top: 35.5rem;
-  right: 3rem;
-} */
-
+.icon {
+  margin: 2rem;
+}
 .output {
   margin: 4rem auto;
   font-size: 1.4rem;
@@ -135,7 +133,7 @@ button {
   }
   .lgContainer {
     height: 750px;
-    width: 50px;
+    width: 720px;
   }
   .container {
     left: 5%;
@@ -143,7 +141,6 @@ button {
     height: 100%;
     margin: 0;
     padding: 1rem auto;
-    /* border-radius: 0px; */
   }
 
   input {
@@ -155,16 +152,42 @@ button {
     padding: 10px 80px;
   }
   .details {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
   }
   .overall {
-    font-size: 2.2rem;
+    position: absolute;
+    left: 0;
+    border-radius: 0 20px 0 0;
+    width: 350px;
+    text-align: left;
+    font-size: 1.7rem;
     font-weight: 300;
+  }
+  .hrVisible {
+    position: absolute;
+    width: 381px;
+    top: 22.3rem;
+    left: 0;
+    border-top: 1px solid white;
+  }
+  .icon {
+    position: absolute;
+    right: 1.5rem;
+    top: 17rem;
   }
 
   .location {
-    font-weight: 300;
+    position: absolute;
+    border-radius: 0 0 20px 0;
     font-size: 1.4rem;
+    font-weight: 300;
+    display: inline-block;
+    left: 0;
+    width: 350px;
+    text-align: left;
+    top: 21.5rem;
+    font-weight: 300;
+    font-size: 1.3rem;
   }
 
   .latitudeLongitude {
@@ -183,12 +206,17 @@ button {
     top: 31rem;
     right: 1.1rem;
   }
-  .dateTime {
-    top: 35.5rem;
+  .onlyDate {
     right: 1.1rem;
-    font-size: 1.2rem;
+    top: 35.5rem;
   }
-
+  .onlyTime {
+    left: 1.1rem;
+    top: 35.5rem;
+  }
+  .icon {
+    margin: 2rem;
+  }
   .timeZone {
     font-size: 1.2rem;
     top: 35.5rem;
@@ -238,11 +266,32 @@ button {
     font-size: 1.2rem;
   }
   .overall {
-    font-size: 2rem;
+    position: absolute;
+    font-size: 1.6rem;
     font-weight: 300;
+    left: 0;
+    border-radius: 0 20px 0 0;
+    width: 300px;
+    text-align: left;
+  }
+  .hrVisible {
+    position: absolute;
+    width: 332px;
+    top: 21.9rem;
+    left: 0;
+    border-top: 1px solid white;
   }
 
   .location {
+    position: absolute;
+    border-radius: 0 0 20px 0;
+    font-size: 1.4rem;
+    font-weight: 300;
+    display: inline-block;
+    left: 0;
+    width: 300px;
+    text-align: left;
+    top: 21.1rem;
     font-weight: 300;
     font-size: 1.3rem;
   }
@@ -263,16 +312,18 @@ button {
     top: 31rem;
     right: 0.5rem;
   }
-  .dateTime {
-    top: 35.5rem;
+  .onlyDate {
     right: 0.5rem;
-    font-size: 1rem;
-  }
-
-  .timeZone {
-    font-size: 1rem;
     top: 35.5rem;
+  }
+  .onlyTime {
     left: 0.5rem;
+    top: 35.5rem;
+  }
+  .icon {
+    position: absolute;
+    right: 1rem;
+    top: 16rem;
   }
 
   .footer {
