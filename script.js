@@ -22,6 +22,9 @@ const apiUrl =
 
 const imageApi = "https://api.unsplash.com/search/photos?query=";
 
+// 7 Day forcast api
+// http://api.weatherapi.com/v1/forecast.json?key=dbb97da661744d27b6b80803210312&q=<cityName>&days=7"
+
 function fetchApi(fullApiUrl) {
   fetch(fullApiUrl)
     .then((response) => response.json())
@@ -71,7 +74,6 @@ function fetchApi(fullApiUrl) {
           "-landscape" +
           "&client_id=9kvb2pRRvKu2HUIy1cBVjsnRVC9wjPkBSlujgUAqwI4";
       }
-
       const randomImage = Math.trunc(Math.random() * 10);
       fetch(fullImgApi)
         .then((response) => response.json())
@@ -86,9 +88,9 @@ function fetchApi(fullApiUrl) {
 
 function findWeather() {
   const txt = inputCity.value;
-  const fullApiUrl = apiUrl + txt + "&aqi=yes";
 
   if (txt !== "") {
+    const fullApiUrl = apiUrl + txt + "&aqi=yes";
     fetchApi(fullApiUrl);
   } else {
     output.innerText = "Enter a city name! ";
