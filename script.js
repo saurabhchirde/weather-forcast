@@ -73,7 +73,7 @@ function fetchForecastApi(fullForecastApi) {
       forecastTemperature1.innerHTML =
         "Max: " +
         data.forecast.forecastday[0].day.maxtemp_c +
-        "˚C, \nMin: " +
+        "˚C\nMin: " +
         data.forecast.forecastday[0].day.mintemp_c +
         "˚C";
 
@@ -87,7 +87,7 @@ function fetchForecastApi(fullForecastApi) {
       forecastTemperature2.innerHTML =
         "Max: " +
         data.forecast.forecastday[1].day.maxtemp_c +
-        "˚C, \nMin: " +
+        "˚C\nMin: " +
         data.forecast.forecastday[1].day.mintemp_c +
         "˚C";
 
@@ -101,13 +101,78 @@ function fetchForecastApi(fullForecastApi) {
       forecastTemperature3.innerHTML =
         "Max: " +
         data.forecast.forecastday[2].day.maxtemp_c +
-        "˚C, \nMin: " +
+        "˚C\nMin: " +
         data.forecast.forecastday[2].day.mintemp_c +
         "˚C";
 
       footerEl.innerText = "with ❤️ by Saurabh Chirde";
     })
-    .catch(() => (output.innerText = "Enter a valid city name ! "));
+    .catch(() => {
+      // check else leave it output.innertext
+      document.querySelector(".error").innerText = "Enter a valid city name ! ";
+    });
+}
+
+function imageApi(fullImgApi) {
+  const randomImage = Math.trunc(Math.random() * 10);
+  fetch(fullImgApi)
+    .then((response) => response.json())
+    .then((json) => {
+      bgImg.src = json.results[randomImage].urls.regular;
+    })
+    .catch(() => {
+      document.querySelector(".error").innerText = "Image could not be found ";
+    });
+}
+
+function imageTimeCheck(oTime, iconSrc, season) {
+  if (oTime >= "20:00" && oTime < "04:00") {
+    iconTime = "night";
+    console.log(iconTime);
+    iconEl.innerHTML =
+      '<img src="icons/' + iconTime + "/" + iconSrc + '"/></img>';
+    var fullImgApi =
+      imageApi +
+      season +
+      "-night" +
+      "-landscape" +
+      "&client_id=9kvb2pRRvKu2HUIy1cBVjsnRVC9wjPkBSlujgUAqwI4";
+  } else if (oTime >= "04:00" && oTime < "11:00") {
+    iconTime = "morning";
+    console.log(iconTime);
+    iconEl.innerHTML =
+      '<img src="icons/' + iconTime + "/" + iconSrc + '"/></img>';
+    var fullImgApi =
+      imageApi +
+      season +
+      "-morning" +
+      "-landscape" +
+      "&client_id=9kvb2pRRvKu2HUIy1cBVjsnRVC9wjPkBSlujgUAqwI4";
+  } else if (oTime >= "11:00" && oTime < "16:00") {
+    iconTime = "afternoon";
+    console.log(iconTime);
+    iconEl.innerHTML =
+      '<img src="icons/' + iconTime + "/" + iconSrc + '"/></img>';
+    var fullImgApi =
+      imageApi +
+      season +
+      "-afternoon" +
+      "-landscape" +
+      "&client_id=9kvb2pRRvKu2HUIy1cBVjsnRVC9wjPkBSlujgUAqwI4";
+  } else if (oTime >= "16:00" && oTime < "20:00") {
+    iconTime = "evening";
+    console.log(iconTime);
+    iconEl.innerHTML =
+      '<img src="icons/' + iconTime + "/" + iconSrc + '"/></img>';
+    var fullImgApi =
+      imageApi +
+      season +
+      "-evening" +
+      "-landscape" +
+      "&client_id=9kvb2pRRvKu2HUIy1cBVjsnRVC9wjPkBSlujgUAqwI4";
+  } else {
+    console.log("None time work");
+  }
 }
 
 function fetchApi(fullApiUrl) {
@@ -148,36 +213,12 @@ function fetchApi(fullApiUrl) {
       var season = partial.replace(" ", "-");
       var iconSrc = json.current.condition.icon.slice(-7);
 
-      if (oTime > "18:00" || oTime < "04:00") {
-        iconTime = "night";
-        iconEl.innerHTML =
-          '<img src="icons/' + iconTime + "/" + iconSrc + '"/></img>';
-        var fullImgApi =
-          imageApi +
-          season +
-          "-night" +
-          "-landscape" +
-          "&client_id=9kvb2pRRvKu2HUIy1cBVjsnRVC9wjPkBSlujgUAqwI4";
-      } else {
-        iconTime = "day";
-        iconEl.innerHTML =
-          '<img src="icons/' + iconTime + "/" + iconSrc + '"/></img>';
-        var fullImgApi =
-          imageApi +
-          season +
-          "-day" +
-          "-landscape" +
-          "&client_id=9kvb2pRRvKu2HUIy1cBVjsnRVC9wjPkBSlujgUAqwI4";
-      }
-      const randomImage = Math.trunc(Math.random() * 10);
-      fetch(fullImgApi)
-        .then((response) => response.json())
-        .then((json) => {
-          bgImg.src = json.results[randomImage].urls.regular;
-        });
+      imageTimeCheck(oTime, iconSrc, season);
+      imageApi(fullImgApi);
     })
     .catch(() => {
-      output.innerText = "Enter a valid city name ! ";
+      // check else leave it output.innertext
+      document.querySelector(".error").innerText = "Enter a valid city name ! ";
     });
 }
 
