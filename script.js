@@ -113,20 +113,8 @@ function fetchForecastApi(fullForecastApi) {
     });
 }
 
-function imageApi(fullImgApi) {
-  const randomImage = Math.trunc(Math.random() * 10);
-  fetch(fullImgApi)
-    .then((response) => response.json())
-    .then((json) => {
-      bgImg.src = json.results[randomImage].urls.regular;
-    })
-    .catch(() => {
-      document.querySelector(".error").innerText = "Image could not be found ";
-    });
-}
-
 function imageTimeCheck(oTime, iconSrc, season) {
-  if (oTime >= "20:00" && oTime < "04:00") {
+  if (oTime >= "20:00" || oTime < "04:00") {
     iconTime = "night";
     console.log(iconTime);
     iconEl.innerHTML =
@@ -137,7 +125,7 @@ function imageTimeCheck(oTime, iconSrc, season) {
       "-night" +
       "-landscape" +
       "&client_id=9kvb2pRRvKu2HUIy1cBVjsnRVC9wjPkBSlujgUAqwI4";
-  } else if (oTime >= "04:00" && oTime < "11:00") {
+  } else if (oTime >= "04:00" || oTime < "11:00") {
     iconTime = "morning";
     console.log(iconTime);
     iconEl.innerHTML =
@@ -148,7 +136,7 @@ function imageTimeCheck(oTime, iconSrc, season) {
       "-morning" +
       "-landscape" +
       "&client_id=9kvb2pRRvKu2HUIy1cBVjsnRVC9wjPkBSlujgUAqwI4";
-  } else if (oTime >= "11:00" && oTime < "16:00") {
+  } else if (oTime >= "11:00" || oTime < "16:00") {
     iconTime = "afternoon";
     console.log(iconTime);
     iconEl.innerHTML =
@@ -159,7 +147,7 @@ function imageTimeCheck(oTime, iconSrc, season) {
       "-afternoon" +
       "-landscape" +
       "&client_id=9kvb2pRRvKu2HUIy1cBVjsnRVC9wjPkBSlujgUAqwI4";
-  } else if (oTime >= "16:00" && oTime < "20:00") {
+  } else if (oTime >= "16:00" || oTime < "20:00") {
     iconTime = "evening";
     console.log(iconTime);
     iconEl.innerHTML =
@@ -173,6 +161,17 @@ function imageTimeCheck(oTime, iconSrc, season) {
   } else {
     console.log("None time work");
   }
+}
+function imageApiFunc(fullImgApi) {
+  const randomImage = Math.trunc(Math.random() * 10);
+  fetch(fullImgApi)
+    .then((response) => response.json())
+    .then((json) => {
+      bgImg.src = json.results[randomImage].urls.regular;
+    })
+    .catch(() => {
+      document.querySelector(".error").innerText = "Image could not be found ";
+    });
 }
 
 function fetchApi(fullApiUrl) {
@@ -214,7 +213,7 @@ function fetchApi(fullApiUrl) {
       var iconSrc = json.current.condition.icon.slice(-7);
 
       imageTimeCheck(oTime, iconSrc, season);
-      imageApi(fullImgApi);
+      imageApiFunc(fullImgApi);
     })
     .catch(() => {
       // check else leave it output.innertext
