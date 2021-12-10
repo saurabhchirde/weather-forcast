@@ -198,6 +198,9 @@ button:hover {
   .details {
     font-size: 1.2rem;
   }
+  .details2 {
+    font-size: 1.2rem;
+  }
   .overall {
     position: absolute;
     left: 0;
@@ -223,8 +226,8 @@ button:hover {
   .day6,
   .day7 {
     width: 30%;
-    margin: 1rem;
-    padding: 1rem;
+    margin: 0.5rem;
+    padding: 0.5rem;
   }
 
   .location {
@@ -301,6 +304,18 @@ button:hover {
     font-size: 1.6rem;
     width: 270px;
     top: 18rem;
+  }
+  .day1,
+  .day2,
+  .day3,
+  .day4,
+  .day5,
+  .day6,
+  .day7 {
+    width: 40%;
+  }
+  .details2 {
+    font-size: 1.1rem;
   }
   .hrVisible {
     width: 300px;

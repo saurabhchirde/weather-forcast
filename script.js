@@ -73,7 +73,7 @@ function fetchForecastApi(fullForecastApi) {
       forecastTemperature1.innerHTML =
         "Max: " +
         data.forecast.forecastday[0].day.maxtemp_c +
-        "˚C, Min :" +
+        "˚C, \nMin: " +
         data.forecast.forecastday[0].day.mintemp_c +
         "˚C";
 
@@ -87,7 +87,7 @@ function fetchForecastApi(fullForecastApi) {
       forecastTemperature2.innerHTML =
         "Max: " +
         data.forecast.forecastday[1].day.maxtemp_c +
-        "˚C, Min :" +
+        "˚C, \nMin: " +
         data.forecast.forecastday[1].day.mintemp_c +
         "˚C";
 
@@ -101,7 +101,7 @@ function fetchForecastApi(fullForecastApi) {
       forecastTemperature3.innerHTML =
         "Max: " +
         data.forecast.forecastday[2].day.maxtemp_c +
-        "˚C, Min :" +
+        "˚C, \nMin: " +
         data.forecast.forecastday[2].day.mintemp_c +
         "˚C";
 
