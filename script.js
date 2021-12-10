@@ -54,7 +54,7 @@ const imageApi = "https://api.unsplash.com/search/photos?query=";
 
 //7 Day forcast api
 const forecastApi =
-  "http://api.weatherapi.com/v1/forecast.json?key=dbb97da661744d27b6b80803210312&q=";
+  "https://api.weatherapi.com/v1/forecast.json?key=dbb97da661744d27b6b80803210312&q=";
 
 function fetchForecastApi(fullForecastApi) {
   fetch(fullForecastApi)
