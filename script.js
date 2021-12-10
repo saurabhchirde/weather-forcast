@@ -61,7 +61,7 @@ function fetchApi(fullApiUrl) {
       windEl.innerText = `Wind: ${wind_dir}, ${wind} km/h 🍃 `;
       humidityEl.innerText = `Humidity: ${humid}%`;
       dateEl.innerText = `Date : ${oDate}`;
-      timeEl.innerText = `Time: ${oTime}, ${tz}`;
+      timeEl.innerText = `Time: ${oTime}\nZone: ${tz}`;
       footerEl.innerText = "with ❤️ by Saurabh Chirde";
 
       const season = partial.replace(" ", "-");

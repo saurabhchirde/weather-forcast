@@ -71,7 +71,6 @@ button {
 .location {
   text-align: center;
   border-radius: 0 0 20px 20px;
-  font-weight: bold;
   font-size: 1.4rem;
   position: relative;
   margin: -0.1rem auto 1rem auto;
@@ -102,11 +101,12 @@ button {
 }
 .onlyDate {
   right: 3rem;
-  top: 35.5rem;
+  top: 36.5rem;
 }
 .onlyTime {
   left: 3rem;
-  top: 35.5rem;
+  top: 36.5rem;
+  text-align: left;
 }
 .icon {
   margin: 2rem;
@@ -136,8 +136,6 @@ button {
     width: 720px;
   }
   .container {
-    left: 5%;
-    right: 5%;
     height: 100%;
     margin: 0;
     padding: 1rem auto;
@@ -157,16 +155,17 @@ button {
   .overall {
     position: absolute;
     left: 0;
+    top: 18.5rem;
     border-radius: 0 20px 0 0;
-    width: 350px;
+    width: 320px;
     text-align: left;
     font-size: 1.7rem;
     font-weight: 300;
   }
   .hrVisible {
     position: absolute;
-    width: 381px;
-    top: 22.3rem;
+    width: 352px;
+    top: 21.5rem;
     left: 0;
     border-top: 1px solid white;
   }
@@ -183,44 +182,40 @@ button {
     font-weight: 300;
     display: inline-block;
     left: 0;
-    width: 350px;
+    width: 320px;
     text-align: left;
-    top: 21.5rem;
+    top: 20.7rem;
     font-weight: 300;
     font-size: 1.3rem;
   }
 
   .latitudeLongitude {
-    left: 1.1rem;
-    top: 26.3rem;
+    left: 0;
+    top: 27.3rem;
   }
   .wind {
-    top: 31rem;
-    left: 1.1rem;
+    top: 32rem;
+    left: 0rem;
   }
   .temperature {
-    top: 26.3rem;
-    right: 1.1rem;
+    top: 27.3rem;
+    right: 0rem;
   }
   .humidity {
-    top: 31rem;
-    right: 1.1rem;
+    top: 32rem;
+    right: 0rem;
   }
   .onlyDate {
-    right: 1.1rem;
+    right: 0rem;
     top: 35.5rem;
   }
   .onlyTime {
-    left: 1.1rem;
+    left: 0rem;
     top: 35.5rem;
+    text-align: left;
   }
   .icon {
     margin: 2rem;
-  }
-  .timeZone {
-    font-size: 1.2rem;
-    top: 35.5rem;
-    left: 1.1rem;
   }
 
   .footer {
@@ -271,13 +266,14 @@ button {
     font-weight: 300;
     left: 0;
     border-radius: 0 20px 0 0;
-    width: 300px;
+    width: 270px;
     text-align: left;
+    top: 18rem;
   }
   .hrVisible {
     position: absolute;
-    width: 332px;
-    top: 21.9rem;
+    width: 300px;
+    top: 21rem;
     left: 0;
     border-top: 1px solid white;
   }
@@ -289,27 +285,27 @@ button {
     font-weight: 300;
     display: inline-block;
     left: 0;
-    width: 300px;
+    width: 270px;
     text-align: left;
-    top: 21.1rem;
+    top: 20.1rem;
     font-weight: 300;
     font-size: 1.3rem;
   }
 
   .latitudeLongitude {
     left: 0.5rem;
-    top: 26.3rem;
+    top: 27.3rem;
   }
   .wind {
-    top: 31rem;
+    top: 32rem;
     left: 0.5rem;
   }
   .temperature {
-    top: 26.3rem;
+    top: 27.3rem;
     right: 0.5rem;
   }
   .humidity {
-    top: 31rem;
+    top: 32rem;
     right: 0.5rem;
   }
   .onlyDate {
@@ -319,11 +315,12 @@ button {
   .onlyTime {
     left: 0.5rem;
     top: 35.5rem;
+    text-align: left;
   }
   .icon {
     position: absolute;
-    right: 1rem;
-    top: 16rem;
+    right: 0.5rem;
+    top: 17rem;
   }
 
   .footer {
