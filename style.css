@@ -44,13 +44,14 @@ input {
   font-size: 1.3rem;
   margin-left: 1rem;
   padding: 0.4rem;
-  width: 270px;
+  width: 60%;
   border-radius: 10px;
 }
 button {
   font-size: 1.5rem;
   cursor: pointer;
-  padding: 10px 180px;
+  margin: auto 0.5rem;
+  padding: 10px 10px;
   border-radius: 10px;
   color: white;
   background-color: rgba(53, 53, 53, 0.5);
@@ -60,6 +61,14 @@ button {
 button:hover {
   background-color: rgba(227, 227, 227, 0.5);
   color: rgb(9, 9, 9);
+}
+#btnCheck {
+  width: 40%;
+  display: inline-block;
+}
+#btnForcast {
+  width: 40%;
+  display: inline-block;
 }
 .details {
   position: absolute;
@@ -147,12 +156,11 @@ button:hover {
   }
 
   input {
-    width: 250px;
+    width: 58%;
     font-size: 1.1rem;
   }
   button {
-    width: 80%;
-    padding: 10px 80px;
+    padding: 10px 10px;
   }
   .details {
     font-size: 1.2rem;
@@ -235,7 +243,7 @@ button:hover {
     font-size: 1.3rem;
   }
   input {
-    width: 200px;
+    width: 53%;
   }
   button {
     width: 82%;
