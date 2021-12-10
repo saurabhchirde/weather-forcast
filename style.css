@@ -10,7 +10,7 @@ body {
 #bgImg {
   object-fit: cover;
   width: 100%;
-  max-height: 950px;
+
   display: block;
   margin: auto;
 }
@@ -75,11 +75,36 @@ button:hover {
   padding: 1rem;
   font-size: 1.3rem;
 }
+.details2 {
+  padding: 0.3rem;
+  font-size: 1.3rem;
+}
+.day1,
+.day2,
+.day3,
+.day4,
+.day5,
+.day6,
+.day7 {
+  display: inline-block;
+  width: 23%;
+  margin: 0.7rem;
+  padding: 0.5rem;
+}
 .overall {
   position: relative;
   font-size: 2rem;
   font-weight: bold;
   margin: -2rem auto 1rem auto;
+}
+.forecastLocation {
+  position: relative;
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin: -2rem auto 1rem;
+}
+.hide {
+  display: none;
 }
 .hrVisible {
   margin: -1rem auto auto;
@@ -128,7 +153,8 @@ button:hover {
 .icon {
   margin: 2rem;
 }
-.output {
+.output,
+.error {
   margin: 4rem auto;
   font-size: 1.4rem;
   line-height: 2rem;
@@ -145,7 +171,7 @@ button:hover {
     font-size: 2.2rem;
   }
   .lgContainer {
-    height: 760px;
+    height: 900px;
   }
   .container {
     left: 0%;
@@ -160,8 +186,15 @@ button:hover {
     font-size: 1.1rem;
   }
   button {
-    padding: 10px 10px;
+    font-size: 1.4rem;
   }
+  #btnCheck {
+    width: 35%;
+  }
+  #btnForcast {
+    width: 45%;
+  }
+
   .details {
     font-size: 1.2rem;
   }
@@ -181,6 +214,17 @@ button:hover {
     top: 21.5rem;
     left: 0;
     border-top: 1px solid white;
+  }
+  .day1,
+  .day2,
+  .day3,
+  .day4,
+  .day5,
+  .day6,
+  .day7 {
+    width: 30%;
+    margin: 1rem;
+    padding: 1rem;
   }
 
   .location {
@@ -224,6 +268,14 @@ button:hover {
     right: 1rem;
     top: 17rem;
   }
+  .forecastLocation {
+    font-size: 1.6rem;
+    margin: -2rem auto 1rem;
+  }
+  .error {
+    font-size: 1.5rem;
+  }
+
   .footer {
     right: 1.5rem;
   }
@@ -234,7 +286,7 @@ button:hover {
     font-size: 2.2rem;
   }
   .lgContainer {
-    height: 760px;
+    height: 900px;
   }
   label {
     font-size: 1.3rem;
@@ -243,7 +295,7 @@ button:hover {
     width: 53%;
   }
   button {
-    width: 82%;
+    font-size: 1.2rem;
   }
   .overall {
     font-size: 1.6rem;
@@ -258,6 +310,13 @@ button:hover {
     font-size: 1.3rem;
     width: 270px;
     top: 20.1rem;
+  }
+  .forecastLocation {
+    font-size: 1.6rem;
+    margin: -2rem auto 1rem;
+  }
+  .error {
+    font-size: 1.5rem;
   }
 
   .icon {
