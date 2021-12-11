@@ -105,63 +105,25 @@ function fetchForecastApi(fullForecastApi) {
         data.forecast.forecastday[2].day.mintemp_c +
         "˚C";
 
-      footerEl.innerText = "with ❤️ by Saurabh Chirde";
+      document.querySelector(".forecastFooter").innerText =
+        "with ❤️ by Saurabh Chirde";
+
+      //
+      var partial = data.current.condition.text;
+      var cDate = data.current.last_updated;
+      var oTime = cDate.slice(-5);
+      var season = partial.replace(" ", "-");
+      var iconSrc = data.current.condition.icon.slice(-7);
+
+      imageTimeCheck(oTime, iconSrc, season);
     })
     .catch(() => {
-      // check else leave it output.innertext
+      document.querySelector(".outputForecast").classList.add("hide");
       document.querySelector(".error").innerText = "Enter a valid city name ! ";
+      output.classList.add("hide");
     });
 }
 
-function imageTimeCheck(oTime, iconSrc, season) {
-  if (oTime >= "20:00" || oTime < "04:00") {
-    iconTime = "night";
-    console.log(iconTime);
-    iconEl.innerHTML =
-      '<img src="icons/' + iconTime + "/" + iconSrc + '"/></img>';
-    var fullImgApi =
-      imageApi +
-      season +
-      "-night" +
-      "-landscape" +
-      "&client_id=9kvb2pRRvKu2HUIy1cBVjsnRVC9wjPkBSlujgUAqwI4";
-  } else if (oTime >= "04:00" || oTime < "11:00") {
-    iconTime = "morning";
-    console.log(iconTime);
-    iconEl.innerHTML =
-      '<img src="icons/' + iconTime + "/" + iconSrc + '"/></img>';
-    var fullImgApi =
-      imageApi +
-      season +
-      "-morning" +
-      "-landscape" +
-      "&client_id=9kvb2pRRvKu2HUIy1cBVjsnRVC9wjPkBSlujgUAqwI4";
-  } else if (oTime >= "11:00" || oTime < "16:00") {
-    iconTime = "afternoon";
-    console.log(iconTime);
-    iconEl.innerHTML =
-      '<img src="icons/' + iconTime + "/" + iconSrc + '"/></img>';
-    var fullImgApi =
-      imageApi +
-      season +
-      "-afternoon" +
-      "-landscape" +
-      "&client_id=9kvb2pRRvKu2HUIy1cBVjsnRVC9wjPkBSlujgUAqwI4";
-  } else if (oTime >= "16:00" || oTime < "20:00") {
-    iconTime = "evening";
-    console.log(iconTime);
-    iconEl.innerHTML =
-      '<img src="icons/' + iconTime + "/" + iconSrc + '"/></img>';
-    var fullImgApi =
-      imageApi +
-      season +
-      "-evening" +
-      "-landscape" +
-      "&client_id=9kvb2pRRvKu2HUIy1cBVjsnRVC9wjPkBSlujgUAqwI4";
-  } else {
-    console.log("None time work");
-  }
-}
 function imageApiFunc(fullImgApi) {
   const randomImage = Math.trunc(Math.random() * 10);
   fetch(fullImgApi)
@@ -170,8 +132,52 @@ function imageApiFunc(fullImgApi) {
       bgImg.src = json.results[randomImage].urls.regular;
     })
     .catch(() => {
-      document.querySelector(".error").innerText = "Image could not be found ";
+      document.querySelector(".outputForecast").classList.add("hide");
+      output.classList.add("hide");
+      // document.querySelector(".error").innerText = "Image could not be found ";
     });
+}
+
+function imageTimeCheck(oTime, iconSrc, season) {
+  if (oTime.slice(0, 2) > "20" && oTime.slice(0, 2) <= "04") {
+    iconTime = "night";
+    iconEl.innerHTML =
+      '<img src="icons/' + iconTime + "/" + iconSrc + '"/></img>';
+    var fullImgApi =
+      imageApi +
+      season +
+      "-night" +
+      "-landscape" +
+      "&client_id=9kvb2pRRvKu2HUIy1cBVjsnRVC9wjPkBSlujgUAqwI4";
+  } else if (oTime.slice(0, 2) > "04" && oTime.slice(0, 2) <= "11") {
+    iconTime = "morning";
+    iconEl.innerHTML = '<img src="icons/day/' + iconSrc + '"/></img>';
+    var fullImgApi =
+      imageApi +
+      season +
+      "-morning" +
+      "-landscape" +
+      "&client_id=9kvb2pRRvKu2HUIy1cBVjsnRVC9wjPkBSlujgUAqwI4";
+  } else if (oTime.slice(0, 2) > "11" && oTime.slice(0, 2) <= "16") {
+    iconTime = "afternoon";
+    iconEl.innerHTML = '<img src="icons/day/' + iconSrc + '"/></img>';
+    var fullImgApi =
+      imageApi +
+      season +
+      "-afternoon" +
+      "-landscape" +
+      "&client_id=9kvb2pRRvKu2HUIy1cBVjsnRVC9wjPkBSlujgUAqwI4";
+  } else if (oTime.slice(0, 2) > "16" && oTime.slice(0, 2) <= "20") {
+    iconTime = "evening";
+    iconEl.innerHTML = '<img src="icons/night/' + iconSrc + '"/></img>';
+    var fullImgApi =
+      imageApi +
+      season +
+      "-evening" +
+      "-landscape" +
+      "&client_id=9kvb2pRRvKu2HUIy1cBVjsnRVC9wjPkBSlujgUAqwI4";
+  }
+  imageApiFunc(fullImgApi);
 }
 
 function fetchApi(fullApiUrl) {
@@ -213,11 +219,11 @@ function fetchApi(fullApiUrl) {
       var iconSrc = json.current.condition.icon.slice(-7);
 
       imageTimeCheck(oTime, iconSrc, season);
-      imageApiFunc(fullImgApi);
     })
     .catch(() => {
-      // check else leave it output.innertext
       document.querySelector(".error").innerText = "Enter a valid city name ! ";
+      output.classList.add("hide");
+      document.querySelector(".outputForecast").classList.add("hide");
     });
 }
 
@@ -225,14 +231,15 @@ function findWeather() {
   let txt = inputCity.value;
   output.classList.remove("hide");
   document.querySelector(".outputForecast").classList.add("hide");
+  document.querySelector(".error").innerText = "";
 
   if (txt !== "") {
-    document.querySelector(".error").innerText = "";
     const fullApiUrl = apiUrl + txt + "&aqi=yes";
     fetchApi(fullApiUrl);
   } else {
     document.querySelector(".error").innerText = "Enter a city name! ";
     output.classList.add("hide");
+    document.querySelector(".outputForecast").classList.add("hide");
   }
 }
 
@@ -242,14 +249,15 @@ function weatherForecastSevenDays() {
   let txt = inputCity.value;
   document.querySelector(".outputForecast").classList.remove("hide");
   output.classList.add("hide");
+  document.querySelector(".error").innerText = "";
 
   if (txt !== "") {
-    document.querySelector(".error").innerText = "";
     const fullForecastApi = forecastApi + txt + "&days=7";
     fetchForecastApi(fullForecastApi);
   } else {
     document.querySelector(".error").innerText = "Enter a city name! ";
     document.querySelector(".outputForecast").classList.add("hide");
+    output.classList.add("hide");
   }
 }
 btnForcast.addEventListener("click", weatherForecastSevenDays);
