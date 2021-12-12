@@ -1,6 +1,4 @@
-// current weather el
 const btnCheck = document.querySelector("#btnCheck");
-const btnForcast = document.querySelector("#btnForcast");
 const output = document.querySelector(".output");
 const inputCity = document.querySelector(".inputCity");
 const bgImg = document.querySelector("#bgImg");
@@ -17,6 +15,7 @@ const footerEl = document.querySelector(".footer");
 const hrEl = document.querySelector(".hr");
 const iconEl = document.querySelector(".icon");
 
+<<<<<<< HEAD
 // forecast el day1
 const forecastDate1 = document.querySelector(".forecastDate1");
 const forecastLocation1 = document.querySelector(".forecastLocation1");
@@ -36,22 +35,27 @@ const forecastTemperature3 = document.querySelector(".forecastTemperature3");
 const forecastOnlyTime3 = document.querySelector(".forecastOnlyTime3");
 const forecastIcon3 = document.querySelector(".forecastIcon3");
 
+=======
+>>>>>>> parent of 16939a8 (feat: forecast button hide)
 var iconTime = "day";
 
 overall.classList.remove("bglight");
 locationEl.classList.remove("bglight");
 hrEl.classList.remove("hrVisible");
 
+<<<<<<< HEAD
 document.querySelector(".day1").classList.remove("bglight");
 document.querySelector(".day2").classList.remove("bglight");
 document.querySelector(".day3").classList.remove("bglight");
 // weather api
+=======
+>>>>>>> parent of 16939a8 (feat: forecast button hide)
 const apiUrl =
   "https://api.weatherapi.com/v1/current.json?key=dbb97da661744d27b6b80803210312&q=";
 
-//bgImage api
 const imageApi = "https://api.unsplash.com/search/photos?query=";
 
+<<<<<<< HEAD
 //7 Day forcast api
 const forecastApi =
   "https://api.weatherapi.com/v1/forecast.json?key=dbb97da661744d27b6b80803210312&q=";
@@ -168,27 +172,31 @@ function imageApiFunc(fullImgApi) {
 // }
 // imageApiFunc(fullImgApi);
 // }
+=======
+// 7 Day forcast api
+// http://api.weatherapi.com/v1/forecast.json?key=dbb97da661744d27b6b80803210312&q=<cityName>&days=7"
+>>>>>>> parent of 16939a8 (feat: forecast button hide)
 
 function fetchApi(fullApiUrl) {
   fetch(fullApiUrl)
     .then((response) => response.json())
     .then((json) => {
-      var partial = json.current.condition.text;
-      var cDate = json.current.last_updated;
-      var temp = json.current.temp_c;
-      var feelsLike = json.current.feelslike_c;
-      var lat = json.location.lat;
-      var long = json.location.lon;
-      var city = json.location.name;
-      var region = json.location.region;
-      var country = json.location.country;
-      var tz = json.location.tz_id;
-      var wind_dir = json.current.wind_dir;
-      var wind = json.current.wind_kph;
-      var humid = json.current.humidity;
+      const partial = json.current.condition.text;
+      const cDate = json.current.last_updated;
+      const temp = json.current.temp_c;
+      const feelsLike = json.current.feelslike_c;
+      const lat = json.location.lat;
+      const long = json.location.lon;
+      const city = json.location.name;
+      const region = json.location.region;
+      const country = json.location.country;
+      const tz = json.location.tz_id;
+      const wind_dir = json.current.wind_dir;
+      const wind = json.current.wind_kph;
+      const humid = json.current.humidity;
 
-      var oDate = cDate.slice(0, 10);
-      var oTime = cDate.slice(-5);
+      const oDate = cDate.slice(0, 10);
+      const oTime = cDate.slice(-5);
 
       hrEl.classList.add("hrVisible");
       overall.innerText = `" ${partial} "`;
@@ -205,8 +213,8 @@ function fetchApi(fullApiUrl) {
       footerEl.innerHTML =
         "<a href=https://twitter.com/SaurabhChirde>by saurabhchirde</a>";
 
-      var season = partial.replace(" ", "-");
-      var iconSrc = json.current.condition.icon.slice(-7);
+      const season = partial.replace(" ", "-");
+      const iconSrc = json.current.condition.icon.slice(-7);
 
       // imageTimeCheck(oTime, iconSrc, season);
       if (oTime.slice(0, 2) > "20" && oTime.slice(0, 2) <= "04") {
@@ -260,10 +268,14 @@ function fetchApi(fullApiUrl) {
 }
 
 function findWeather() {
+<<<<<<< HEAD
   let txt = inputCity.value;
   output.classList.remove("hide");
   document.querySelector(".outputForecast").classList.add("hide");
   document.querySelector(".error").innerText = "";
+=======
+  const txt = inputCity.value;
+>>>>>>> parent of 16939a8 (feat: forecast button hide)
 
   if (txt !== "") {
     const fullApiUrl = apiUrl + txt + "&aqi=yes";
@@ -276,6 +288,7 @@ function findWeather() {
 }
 
 btnCheck.addEventListener("click", findWeather);
+<<<<<<< HEAD
 
 function weatherForecastSevenDays() {
   let txt = inputCity.value;
@@ -293,3 +306,5 @@ function weatherForecastSevenDays() {
   }
 }
 btnForcast.addEventListener("click", weatherForecastSevenDays);
+=======
+>>>>>>> parent of 16939a8 (feat: forecast button hide)
