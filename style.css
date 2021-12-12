@@ -114,13 +114,9 @@ button:hover {
 }
 .location {
   text-align: center;
-  border-radius: 0 0 20px 20px;
   font-size: 1.4rem;
   position: relative;
   margin: -0.1rem auto 1rem auto;
-}
-.bglight {
-  background-color: rgba(0, 0, 0, 0.2);
 }
 
 .latitudeLongitude {
@@ -164,10 +160,15 @@ button:hover {
 .footer,
 .forecastFooter {
   position: absolute;
-  top: 43.4rem;
+  top: 44.4rem;
   font-size: 0.8rem;
-  right: 4rem;
+  right: 7%;
   color: rgb(220, 220, 220);
+  text-decoration: none;
+}
+a {
+  text-decoration: none;
+  color: rgb(218, 218, 218);
 }
 @media screen and (max-width: 720px) {
   h1 {
@@ -197,7 +198,9 @@ button:hover {
   #btnForcast {
     width: 45%;
   }
-
+  .bglight {
+    background-color: rgba(0, 0, 0, 0.2);
+  }
   .details {
     font-size: 1.2rem;
   }
@@ -284,9 +287,9 @@ button:hover {
 
   .footer,
   .forecastFooter {
-    right: 1.1rem;
+    right: 1%;
     font-size: 0.8rem;
-    top: 47rem;
+    top: 44.4rem;
   }
 }
 
