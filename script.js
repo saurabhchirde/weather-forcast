@@ -124,50 +124,49 @@ function imageApiFunc(fullImgApi) {
     });
 }
 
-// function imageTimeCheck(oTime, iconSrc, season) {
-// if (oTime.slice(0, 2) > "20" && oTime.slice(0, 2) <= "04") {
-//   iconTime = "night";
-//   iconEl.innerHTML = '<img src="icons/night/' + iconSrc + '"/></img>';
-//   var fullImgApi =
-//     imageApi +
-//     season +
-//     "-night" +
-//     "-landscape" +
-//     "&client_id=9kvb2pRRvKu2HUIy1cBVjsnRVC9wjPkBSlujgUAqwI4";
-//   console.log(fullImgApi);
-// } else if (oTime.slice(0, 2) > "04" && oTime.slice(0, 2) <= "11") {
-//   iconTime = "morning";
-//   iconEl.innerHTML = '<img src="icons/day/' + iconSrc + '"/></img>';
-//   var fullImgApi =
-//     imageApi +
-//     season +
-//     "-morning" +
-//     "-landscape" +
-//     "&client_id=9kvb2pRRvKu2HUIy1cBVjsnRVC9wjPkBSlujgUAqwI4";
-//   console.log(fullImgApi);
-// } else if (oTime.slice(0, 2) > "11" && oTime.slice(0, 2) <= "16") {
-//   iconTime = "afternoon";
-//   iconEl.innerHTML = '<img src="icons/day/' + iconSrc + '"/></img>';
-//   var fullImgApi =
-//     imageApi +
-//     season +
-//     "-afternoon" +
-//     "-landscape" +
-//     "&client_id=9kvb2pRRvKu2HUIy1cBVjsnRVC9wjPkBSlujgUAqwI4";
-//   console.log(fullImgApi);
-// } else if (oTime.slice(0, 2) > "16" && oTime.slice(0, 2) <= "20") {
-//   iconTime = "evening";
-//   iconEl.innerHTML = '<img src="icons/night/' + iconSrc + '"/></img>';
-//   var fullImgApi =
-//     imageApi +
-//     season +
-//     "-evening" +
-//     "-landscape" +
-//     "&client_id=9kvb2pRRvKu2HUIy1cBVjsnRVC9wjPkBSlujgUAqwI4";
-//   console.log(fullImgApi);
-// }
-// imageApiFunc(fullImgApi);
-// }
+function imageTimeCheck(oTime, iconSrc, season) {
+  if (
+    (oTime.slice(0, 2) > "20" && oTime.slice(0, 2) <= "24") ||
+    (oTime > "00:00" && oTime.slice(0, 2) <= "04")
+  ) {
+    iconTime = "night";
+    iconEl.innerHTML = '<img src="icons/night/' + iconSrc + '"/></img>';
+    var fullImgApi =
+      imageApi +
+      season +
+      "-night" +
+      "-landscape" +
+      "&client_id=9kvb2pRRvKu2HUIy1cBVjsnRVC9wjPkBSlujgUAqwI4";
+  } else if (oTime.slice(0, 2) > "04" && oTime.slice(0, 2) <= "11") {
+    iconTime = "morning";
+    iconEl.innerHTML = '<img src="icons/day/' + iconSrc + '"/></img>';
+    var fullImgApi =
+      imageApi +
+      season +
+      "-morning" +
+      "-landscape" +
+      "&client_id=9kvb2pRRvKu2HUIy1cBVjsnRVC9wjPkBSlujgUAqwI4";
+  } else if (oTime.slice(0, 2) > "11" && oTime.slice(0, 2) <= "16") {
+    iconTime = "afternoon";
+    iconEl.innerHTML = '<img src="icons/day/' + iconSrc + '"/></img>';
+    var fullImgApi =
+      imageApi +
+      season +
+      "-afternoon" +
+      "-landscape" +
+      "&client_id=9kvb2pRRvKu2HUIy1cBVjsnRVC9wjPkBSlujgUAqwI4";
+  } else if (oTime.slice(0, 2) > "16" && oTime.slice(0, 2) <= "20") {
+    iconTime = "evening";
+    iconEl.innerHTML = '<img src="icons/night/' + iconSrc + '"/></img>';
+    var fullImgApi =
+      imageApi +
+      season +
+      "-evening" +
+      "-landscape" +
+      "&client_id=9kvb2pRRvKu2HUIy1cBVjsnRVC9wjPkBSlujgUAqwI4";
+  }
+  imageApiFunc(fullImgApi);
+}
 
 function fetchApi(fullApiUrl) {
   fetch(fullApiUrl)
@@ -208,49 +207,7 @@ function fetchApi(fullApiUrl) {
       var season = partial.replace(" ", "-");
       var iconSrc = json.current.condition.icon.slice(-7);
 
-      // imageTimeCheck(oTime, iconSrc, season);
-      if (oTime.slice(0, 2) > "20" && oTime.slice(0, 2) <= "04") {
-        iconTime = "night";
-        iconEl.innerHTML = '<img src="icons/night/' + iconSrc + '"/></img>';
-        var fullImgApi =
-          imageApi +
-          season +
-          "-night" +
-          "-landscape" +
-          "&client_id=9kvb2pRRvKu2HUIy1cBVjsnRVC9wjPkBSlujgUAqwI4";
-        console.log(fullImgApi);
-      } else if (oTime.slice(0, 2) > "04" && oTime.slice(0, 2) <= "11") {
-        iconTime = "morning";
-        iconEl.innerHTML = '<img src="icons/day/' + iconSrc + '"/></img>';
-        var fullImgApi =
-          imageApi +
-          season +
-          "-morning" +
-          "-landscape" +
-          "&client_id=9kvb2pRRvKu2HUIy1cBVjsnRVC9wjPkBSlujgUAqwI4";
-        console.log(fullImgApi);
-      } else if (oTime.slice(0, 2) > "11" && oTime.slice(0, 2) <= "16") {
-        iconTime = "afternoon";
-        iconEl.innerHTML = '<img src="icons/day/' + iconSrc + '"/></img>';
-        var fullImgApi =
-          imageApi +
-          season +
-          "-afternoon" +
-          "-landscape" +
-          "&client_id=9kvb2pRRvKu2HUIy1cBVjsnRVC9wjPkBSlujgUAqwI4";
-        console.log(fullImgApi);
-      } else if (oTime.slice(0, 2) > "16" && oTime.slice(0, 2) <= "20") {
-        iconTime = "evening";
-        iconEl.innerHTML = '<img src="icons/night/' + iconSrc + '"/></img>';
-        var fullImgApi =
-          imageApi +
-          season +
-          "-evening" +
-          "-landscape" +
-          "&client_id=9kvb2pRRvKu2HUIy1cBVjsnRVC9wjPkBSlujgUAqwI4";
-        console.log(fullImgApi);
-      }
-      imageApiFunc(fullImgApi);
+      imageTimeCheck(oTime, iconSrc, season);
     })
     .catch(() => {
       document.querySelector(".error").innerText = "Enter a valid city name ! ";
@@ -284,7 +241,7 @@ function weatherForecastSevenDays() {
   document.querySelector(".error").innerText = "";
 
   if (txt !== "") {
-    const fullForecastApi = forecastApi + txt + "&days=3";
+    const fullForecastApi = forecastApi + txt + "&days=7";
     fetchForecastApi(fullForecastApi);
   } else {
     document.querySelector(".error").innerText = "Enter a city name! ";
