@@ -127,7 +127,7 @@ function imageApiFunc(fullImgApi) {
 function imageTimeCheck(oTime, iconSrc, season) {
   if (
     (oTime.slice(0, 2) > "20" && oTime.slice(0, 2) <= "24") ||
-    (oTime > "00:00" && oTime.slice(0, 2) <= "04")
+    (oTime >= "00:00" && oTime.slice(0, 2) <= "04")
   ) {
     iconTime = "night";
     iconEl.innerHTML = '<img src="icons/night/' + iconSrc + '"/></img>';
