@@ -167,7 +167,7 @@ button:hover {
 .footer,
 .forecastFooter {
   position: absolute;
-  top: 44.4rem;
+  top: 44.8rem;
   font-size: 0.8rem;
   right: 7%;
   color: rgb(220, 220, 220);
@@ -180,6 +180,9 @@ a {
 @media screen and (max-width: 720px) {
   h1 {
     font-size: 2.2rem;
+  }
+  #bgImg {
+    object-fit: cover;
   }
   .lgContainer {
     height: 900px;
@@ -296,7 +299,7 @@ a {
   .forecastFooter {
     right: 1%;
     font-size: 0.8rem;
-    top: 44.4rem;
+    top: 44.8rem;
   }
 }
 
@@ -304,8 +307,18 @@ a {
   h1 {
     font-size: 2.2rem;
   }
+  #bgImg {
+    object-fit: cover;
+    height: 810px;
+
+    display: block;
+    margin: auto;
+  }
   .lgContainer {
-    height: 900px;
+    height: 770px;
+  }
+  .container {
+    border-radius: 0;
   }
   label {
     font-size: 1.3rem;
