@@ -200,7 +200,7 @@ function fetchApi(fullApiUrl) {
       windEl.innerText = `Wind: ${wind_dir}, ${wind} km/h 🍃 `;
       humidityEl.innerText = `Humidity: ${humid}%`;
       dateEl.innerText = `Date : ${oDate}`;
-      timeEl.innerText = `At: ${oTime} ⏱\nTime zone: ${tz}`;
+      timeEl.innerText = `Last Update: ${oTime} ⏱\nTime Zone: ${tz}`;
       footerEl.innerHTML =
         "<a href=https://twitter.com/SaurabhChirde>by saurabhchirde</a>";
 
