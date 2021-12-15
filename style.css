@@ -1,6 +1,5 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
-  /* background-color: rgb(101, 162, 255); */
   color: white;
   padding: 0;
   margin: 0;
@@ -89,16 +88,19 @@ button:hover {
 }
 .day1,
 .day2,
-.day3,
-.day4,
-.day5,
-.day6,
-.day7 {
+.day3 {
   display: inline-block;
   width: 23%;
   margin: 0.7rem;
   padding: 0.5rem;
   border-radius: 20px;
+  cursor: pointer;
+}
+.day1:hover,
+.day2:hover,
+.day3:hover {
+  background-color: rgba(255, 255, 255, 0.6);
+  color: rgb(11, 11, 11);
 }
 .overall {
   position: relative;
@@ -177,6 +179,17 @@ a {
   text-decoration: none;
   color: rgb(218, 218, 218);
 }
+.hour {
+  /* position: absolute; */
+  display: inline-block;
+  font-size: 1rem;
+  width: 180px;
+  height: 180px;
+  margin: 1rem;
+  border-radius: 10px;
+  background-color: gray;
+}
+
 @media screen and (max-width: 720px) {
   h1 {
     font-size: 2.2rem;

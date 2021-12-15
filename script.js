@@ -21,20 +21,29 @@ const iconEl = document.querySelector(".icon");
 const forecastDate1 = document.querySelector(".forecastDate1");
 const forecastLocation1 = document.querySelector(".forecastLocation1");
 const forecastTemperature1 = document.querySelector(".forecastTemperature1");
-const forecastOnlyTime1 = document.querySelector(".forecastOnlyTime1");
+const forecastSunRiseSunSetTime1 = document.querySelector(
+  ".forecastSunRiseSunSetTime1"
+);
 const forecastIcon1 = document.querySelector(".forecastIcon1");
+const day1El = document.querySelector(".day1");
 // forecast el day2
 const forecastDate2 = document.querySelector(".forecastDate2");
 const forecastLocation2 = document.querySelector(".forecastLocation2");
 const forecastTemperature2 = document.querySelector(".forecastTemperature2");
-const forecastOnlyTime2 = document.querySelector(".forecastOnlyTime2");
+const forecastSunRiseSunSetTime2 = document.querySelector(
+  ".forecastSunRiseSunSetTime2"
+);
 const forecastIcon2 = document.querySelector(".forecastIcon2");
+const day2El = document.querySelector(".day2");
 // forecast el day3
 const forecastDate3 = document.querySelector(".forecastDate3");
 const forecastLocation3 = document.querySelector(".forecastLocation3");
 const forecastTemperature3 = document.querySelector(".forecastTemperature3");
-const forecastOnlyTime3 = document.querySelector(".forecastOnlyTime3");
+const forecastSunRiseSunSetTime3 = document.querySelector(
+  ".forecastSunRiseSunSetTime3"
+);
 const forecastIcon3 = document.querySelector(".forecastIcon3");
+const day3El = document.querySelector(".day3");
 
 var iconTime = "day";
 
@@ -55,6 +64,222 @@ const imageApi = "https://api.unsplash.com/search/photos?query=";
 //7 Day forcast api
 const forecastApi =
   "https://api.weatherapi.com/v1/forecast.json?key=dbb97da661744d27b6b80803210312&q=";
+
+function day1Details() {
+  output.classList.add("hide");
+  document.querySelector(".outputForecast").classList.add("hide");
+  document.querySelector(".forecastInDetail").classList.remove("hide");
+
+  console.log("day1 clicked");
+
+  let txt = inputCity.value;
+  var fullForecastApi = forecastApi + txt + "&days=7";
+
+  fetch(fullForecastApi)
+    .then((res) => res.json())
+    .then((json) => {
+      hrEl.classList.add("hrVisible");
+
+      // main
+      document.querySelector(
+        ".overallInDetail"
+      ).innerText = `" ${json.current.condition.text} "`;
+
+      document.querySelector(".overallInDetail").classList.add("bglight");
+
+      document.querySelector(
+        ".locationInDetail"
+      ).innerText = `🌎 ${json.location.name}, ${json.location.region}, ${json.location.country}`;
+
+      document.querySelector(".overallInDetail").classList.add("bglight");
+
+      document.querySelector(
+        ".latitudeLongitudeInDetail"
+      ).innerText = `Latitude: ${json.location.lat} \nLongitude: ${json.location.lon}`;
+
+      document.querySelector(
+        ".temperatureInDetail"
+      ).innerText = `🌡 Current Temp: ${json.current.temp_c}˚C \nFeels like: ${json.current.feelslike_c}˚C`;
+
+      document.querySelector(
+        ".windInDetail"
+      ).innerText = `Wind: ${json.current.wind_dir}, ${json.current.wind_kph} km/h 🍃 `;
+
+      document.querySelector(
+        ".humidityInDetail"
+      ).innerText = `Humidity: ${json.current.humidity}%`;
+
+      document.querySelector(
+        ".onlyDateInDetail"
+      ).innerText = `Date : ${json.current.last_updated.slice(0, 10)}`;
+
+      document.querySelector(
+        ".onlyTimeInDetail"
+      ).innerText = `Last Update: ${json.current.last_updated.slice(
+        -5
+      )} ⏱\nTime Zone: ${json.location.tz_id}`;
+
+      document.querySelector(
+        ".sunriseSunsetTimeInDetail"
+      ).innerText = `Sunrise: ${json.forecast.forecastday[0].astro.sunrise}\nSunset : ${json.forecast.forecastday[0].astro.sunset}`;
+      document.querySelector(
+        ".moonriseMoonsetTimeInDetail"
+      ).innerText = `Moonrise: ${json.forecast.forecastday[0].astro.moonrise}\nMoonset : ${json.forecast.forecastday[0].astro.moonset}`;
+      document.querySelector(
+        ".chancesOfSnowInDetail"
+      ).innerText = `Chances of Snow: ${json.forecast.forecastday[0].day.daily_chance_of_snow}`;
+      document.querySelector(
+        ".chancesOfRainInDetail"
+      ).innerText = `Chances of rain: ${json.forecast.forecastday[0].day.daily_chance_of_rain}`;
+
+      // hourly00
+      document.querySelector(".overallInDetailHour00").innerText =
+        json.forecast.forecastday[0].hour[0].condition.text;
+      document.querySelector(".inDetailTimeHour00").innerText =
+        json.forecast.forecastday[0].hour[0].time.slice(-5);
+      document.querySelector(".iconInDetailHour00").innerHTML =
+        '<img src="https:' +
+        json.forecast.forecastday[0].hour[0].condition.icon +
+        '"/></img>';
+      document.querySelector(".temperatureInDetailHour00").innerText =
+        json.forecast.forecastday[0].hour[0].temp_c + "˚C";
+      document.querySelector(
+        ".windInDetailHour00"
+      ).innerText = `Wind: ${json.forecast.forecastday[0].hour[0].wind_dir}, ${json.forecast.forecastday[0].hour[0].wind_kph}`;
+
+      `Wind: ${json.current.wind_dir}, ${json.current.wind_kph} km/h 🍃 `;
+      document.querySelector(".chancesOfSnowInDetailHour00").innerText =
+        json.forecast.forecastday[0].hour[0].chance_of_snow;
+      document.querySelector(".chancesOfRainInDetailHour00").innerText =
+        json.forecast.forecastday[0].hour[0].chance_of_rain;
+
+      // hourly01
+      // document.querySelector(".overallInDetailHour01").innerText =
+      // document.querySelector(".inDetailTimeHour01").innerText =
+      // document.querySelector(".iconInDetailHour01").innerText =
+      // document.querySelector(".temperatureInDetailHour01").innerText =
+      // document.querySelector(".windInDetailHour01").innerText =
+      // document.querySelector(".chancesOfSnowInDetailHour01").innerText =
+      // document.querySelector(".chancesOfRainInDetailHour01").innerText =
+
+      // hourly02
+      // document.querySelector(".overallInDetailHour02").innerText =
+      // document.querySelector(".inDetailTimeHour02").innerText =
+      // document.querySelector(".iconInDetailHour02").innerText =
+      // document.querySelector(".temperatureInDetailHour02").innerText =
+      // document.querySelector(".windInDetailHour02").innerText =
+      // document.querySelector(".chancesOfSnowInDetailHour02").innerText =
+      // document.querySelector(".chancesOfRainInDetailHour02").innerText =
+
+      // hourly03
+      // document.querySelector(".overallInDetailHour03").innerText =
+      // document.querySelector(".inDetailTimeHour03").innerText =
+      // document.querySelector(".iconInDetailHour03").innerText =
+      // document.querySelector(".temperatureInDetailHour03").innerText =
+      // document.querySelector(".windInDetailHour03").innerText =
+      // document.querySelector(".chancesOfSnowInDetailHour03").innerText =
+      // document.querySelector(".chancesOfRainInDetailHour03").innerText =
+
+      // hourly04
+      // document.querySelector(".overallInDetailHour004").innerText =
+      // document.querySelector(".inDetailTimeHour04").innerText =
+      // document.querySelector(".iconInDetailHour04").innerText =
+      // document.querySelector(".temperatureInDetailHour04").innerText =
+      // document.querySelector(".windInDetailHour04").innerText =
+      // document.querySelector(".chancesOfSnowInDetailHour04").innerText =
+      // document.querySelector(".chancesOfRainInDetailHour04").innerText =
+
+      // hourly05
+      // document.querySelector(".overallInDetailHour05").innerText =
+      // document.querySelector(".inDetailTimeHour05").innerText =
+      // document.querySelector(".iconInDetailHour05").innerText =
+      // document.querySelector(".temperatureInDetailHour05").innerText =
+      // document.querySelector(".windInDetailHour05").innerText =
+      // document.querySelector(".chancesOfSnowInDetailHour05").innerText =
+      // document.querySelector(".chancesOfRainInDetailHour05").innerText =
+
+      // hourly06
+      // document.querySelector(".overallInDetailHour06").innerText =
+      // document.querySelector(".inDetailTimeHour06").innerText =
+      // document.querySelector(".iconInDetailHour06").innerText =
+      // document.querySelector(".temperatureInDetailHour06").innerText =
+      // document.querySelector(".windInDetailHour06").innerText =
+      // document.querySelector(".chancesOfSnowInDetailHour06").innerText =
+      // document.querySelector(".chancesOfRainInDetailHour06").innerText =
+
+      // hourly07
+      // document.querySelector(".overallInDetailHour07").innerText =
+      // document.querySelector(".inDetailTimeHour07").innerText =
+      // document.querySelector(".iconInDetailHour07").innerText =
+      // document.querySelector(".temperatureInDetailHour07").innerText =
+      // document.querySelector(".windInDetailHour07").innerText =
+      // document.querySelector(".chancesOfSnowInDetailHour07").innerText =
+      // document.querySelector(".chancesOfRainInDetailHour07").innerText =
+
+      // hourly08
+      // document.querySelector(".overallInDetailHour08").innerText =
+      // document.querySelector(".inDetailTimeHour08").innerText =
+      // document.querySelector(".iconInDetailHour08").innerText =
+      // document.querySelector(".temperatureInDetailHour08").innerText =
+      // document.querySelector(".windInDetailHour08").innerText =
+      // document.querySelector(".chancesOfSnowInDetailHour08").innerText =
+      // document.querySelector(".chancesOfRainInDetailHour08").innerText =
+
+      // hourly09
+      // document.querySelector(".overallInDetailHour09").innerText =
+      // document.querySelector(".inDetailTimeHour09").innerText =
+      // document.querySelector(".iconInDetailHour09").innerText =
+      // document.querySelector(".temperatureInDetailHour09").innerText =
+      // document.querySelector(".windInDetailHour09").innerText =
+      // document.querySelector(".chancesOfSnowInDetailHour09").innerText =
+      // document.querySelector(".chancesOfRainInDetailHour09").innerText =
+
+      // hourly10
+      // document.querySelector(".overallInDetailHour10").innerText =
+      // document.querySelector(".inDetailTimeHour10").innerText =
+      // document.querySelector(".iconInDetailHour10").innerText =
+      // document.querySelector(".temperatureInDetailHour10").innerText =
+      // document.querySelector(".windInDetailHour10").innerText =
+      // document.querySelector(".chancesOfSnowInDetailHour10").innerText =
+      // document.querySelector(".chancesOfRainInDetailHour10").innerText =
+
+      // hourly11
+      // document.querySelector(".overallInDetailHour11").innerText =
+      // document.querySelector(".inDetailTimeHour11").innerText =
+      // document.querySelector(".iconInDetailHour11").innerText =
+      // document.querySelector(".temperatureInDetailHour11").innerText =
+      // document.querySelector(".windInDetailHour11").innerText =
+      // document.querySelector(".chancesOfSnowInDetailHour11").innerText =
+      // document.querySelector(".chancesOfRainInDetailHour11").innerText =
+
+      // hourly12
+      // document.querySelector(".overallInDetailHour12").innerText =
+      // document.querySelector(".inDetailTimeHour12").innerText =
+      // document.querySelector(".iconInDetailHour12").innerText =
+      // document.querySelector(".temperatureInDetailHour12").innerText =
+      // document.querySelector(".windInDetailHour12").innerText =
+      // document.querySelector(".chancesOfSnowInDetailHour12").innerText =
+      // document.querySelector(".chancesOfRainInDetailHour12").innerText =
+
+      // hourly13
+      // document.querySelector(".overallInDetailHour13").innerText =
+      // document.querySelector(".inDetailTimeHour13").innerText =
+      // document.querySelector(".iconInDetailHour13").innerText =
+      // document.querySelector(".temperatureInDetailHour13").innerText =
+      // document.querySelector(".windInDetailHour13").innerText =
+      // document.querySelector(".chancesOfSnowInDetailHour13").innerText =
+      // document.querySelector(".chancesOfRainInDetailHour13").innerText =
+
+      // hourly14
+      // document.querySelector(".overallInDetailHour14").innerText =
+      // document.querySelector(".inDetailTimeHour14").innerText =
+      // document.querySelector(".iconInDetailHour14").innerText =
+      // document.querySelector(".temperatureInDetailHour14").innerText =
+      // document.querySelector(".windInDetailHour14").innerText =
+      // document.querySelector(".chancesOfSnowInDetailHour14").innerText =
+      // document.querySelector(".chancesOfRainInDetailHour14").innerText =
+    });
+}
 
 function fetchForecastApi(fullForecastApi) {
   fetch(fullForecastApi)
@@ -219,6 +444,7 @@ function fetchApi(fullApiUrl) {
 function findWeather() {
   let txt = inputCity.value;
   output.classList.remove("hide");
+  document.querySelector(".forecastInDetail").classList.add("hide");
   document.querySelector(".outputForecast").classList.add("hide");
   document.querySelector(".error").innerText = "";
 
@@ -234,14 +460,15 @@ function findWeather() {
 
 btnCheck.addEventListener("click", findWeather);
 
-function weatherForecastSevenDays() {
+function weatherForecastThreeDays() {
   let txt = inputCity.value;
   document.querySelector(".outputForecast").classList.remove("hide");
+  document.querySelector(".forecastInDetail").classList.add("hide");
   output.classList.add("hide");
   document.querySelector(".error").innerText = "";
 
   if (txt !== "") {
-    const fullForecastApi = forecastApi + txt + "&days=7";
+    var fullForecastApi = forecastApi + txt + "&days=7";
     fetchForecastApi(fullForecastApi);
   } else {
     document.querySelector(".error").innerText = "Enter a city name! ";
@@ -249,4 +476,21 @@ function weatherForecastSevenDays() {
     output.classList.add("hide");
   }
 }
-btnForcast.addEventListener("click", weatherForecastSevenDays);
+
+function day2Details() {
+  output.classList.add("hide");
+  document.querySelector(".outputForecast").classList.add("hide");
+
+  console.log("day2 clicked");
+}
+
+function day3Details() {
+  output.classList.add("hide");
+  document.querySelector(".outputForecast").classList.add("hide");
+
+  console.log("day3 clicked");
+}
+btnForcast.addEventListener("click", weatherForecastThreeDays);
+day1El.addEventListener("click", day1Details);
+day2El.addEventListener("click", day2Details);
+day3El.addEventListener("click", day3Details);
