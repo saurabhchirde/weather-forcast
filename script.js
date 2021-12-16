@@ -79,9 +79,8 @@ function calHourly(currentDay, json) {
     json.forecast.forecastday[currentDay].hour[0].temp_c + "˚C";
   document.querySelector(
     ".windInDetailHour00"
-  ).innerText = `Wind: ${json.forecast.forecastday[currentDay].hour[0].wind_dir}, ${json.forecast.forecastday[currentDay].hour[0].wind_kph}`;
+  ).innerText = `${json.forecast.forecastday[currentDay].hour[0].wind_dir}, ${json.forecast.forecastday[currentDay].hour[0].wind_kph} km/h`;
 
-  `Wind: ${json.current.wind_dir}, ${json.current.wind_kph} km/h 🍃 `;
   // document.querySelector(".chancesOfSnowInDetailHour00").innerText =
   //   json.forecast.forecastday[currentDay].hour[0].chance_of_snow;
   // document.querySelector(".chancesOfRainInDetailHour00").innerText ="Rain chances"
@@ -100,9 +99,9 @@ function calHourly(currentDay, json) {
     json.forecast.forecastday[currentDay].hour[1].temp_c + "˚C";
   document.querySelector(
     ".windInDetailHour01"
-  ).innerText = `Wind: ${json.forecast.forecastday[currentDay].hour[1].wind_dir}, ${json.forecast.forecastday[currentDay].hour[1].wind_kph}`;
+  ).innerText = `${json.forecast.forecastday[currentDay].hour[1].wind_dir}, ${json.forecast.forecastday[currentDay].hour[1].wind_kph} km/h`;
 
-  `Wind: ${json.current.wind_dir}, ${json.current.wind_kph} km/h 🍃 `;
+  // `Wind: ${json.current.wind_dir}, ${json.current.wind_kph} km/h 🍃 `;
   // document.querySelector(".chancesOfSnowInDetailHour01").innerText =
   //   json.forecast.forecastday[currentDay].hour[1].chance_of_snow;
   // document.querySelector(".chancesOfRainInDetailHour01").innerText =
@@ -121,9 +120,9 @@ function calHourly(currentDay, json) {
     json.forecast.forecastday[currentDay].hour[2].temp_c + "˚C";
   document.querySelector(
     ".windInDetailHour02"
-  ).innerText = `Wind: ${json.forecast.forecastday[currentDay].hour[2].wind_dir}, ${json.forecast.forecastday[currentDay].hour[2].wind_kph}`;
+  ).innerText = `${json.forecast.forecastday[currentDay].hour[2].wind_dir}, ${json.forecast.forecastday[currentDay].hour[2].wind_kph} km/h`;
 
-  `Wind: ${json.current.wind_dir}, ${json.current.wind_kph} km/h 🍃 `;
+  // `${json.current.wind_dir}, ${json.current.wind_kph} km/h 🍃 `;
   // document.querySelector(".chancesOfSnowInDetailHour02").innerText =
   //   json.forecast.forecastday[currentDay].hour[2].chance_of_snow;
   // document.querySelector(".chancesOfRainInDetailHour02").innerText =
@@ -142,9 +141,9 @@ function calHourly(currentDay, json) {
     json.forecast.forecastday[currentDay].hour[3].temp_c + "˚C";
   document.querySelector(
     ".windInDetailHour03"
-  ).innerText = `Wind: ${json.forecast.forecastday[currentDay].hour[3].wind_dir}, ${json.forecast.forecastday[currentDay].hour[3].wind_kph}`;
+  ).innerText = `${json.forecast.forecastday[currentDay].hour[3].wind_dir}, ${json.forecast.forecastday[currentDay].hour[3].wind_kph} km/h`;
 
-  `Wind: ${json.current.wind_dir}, ${json.current.wind_kph} km/h 🍃 `;
+  // `${json.current.wind_dir}, ${json.current.wind_kph} km/h 🍃 `;
   // document.querySelector(".chancesOfSnowInDetailHour03").innerText =
   //   json.forecast.forecastday[currentDay].hour[3].chance_of_snow;
   // document.querySelector(".chancesOfRainInDetailHour03").innerText =
@@ -163,9 +162,9 @@ function calHourly(currentDay, json) {
     json.forecast.forecastday[currentDay].hour[4].temp_c + "˚C";
   document.querySelector(
     ".windInDetailHour04"
-  ).innerText = `Wind: ${json.forecast.forecastday[currentDay].hour[4].wind_dir}, ${json.forecast.forecastday[currentDay].hour[4].wind_kph}`;
+  ).innerText = `${json.forecast.forecastday[currentDay].hour[4].wind_dir}, ${json.forecast.forecastday[currentDay].hour[4].wind_kph} km/h`;
 
-  `Wind: ${json.current.wind_dir}, ${json.current.wind_kph} km/h 🍃 `;
+  // `${json.current.wind_dir}, ${json.current.wind_kph} km/h 🍃 `;
   // document.querySelector(".chancesOfSnowInDetailHour04").innerText =
   //   json.forecast.forecastday[currentDay].hour[4].chance_of_snow;
   // document.querySelector(".chancesOfRainInDetailHour04").innerText =
@@ -184,9 +183,9 @@ function calHourly(currentDay, json) {
     json.forecast.forecastday[currentDay].hour[5].temp_c + "˚C";
   document.querySelector(
     ".windInDetailHour05"
-  ).innerText = `Wind: ${json.forecast.forecastday[currentDay].hour[5].wind_dir}, ${json.forecast.forecastday[currentDay].hour[5].wind_kph}`;
+  ).innerText = `${json.forecast.forecastday[currentDay].hour[5].wind_dir}, ${json.forecast.forecastday[currentDay].hour[5].wind_kph} km/h`;
 
-  `Wind: ${json.current.wind_dir}, ${json.current.wind_kph} km/h 🍃 `;
+  // `${json.current.wind_dir}, ${json.current.wind_kph} km/h 🍃 `;
   // document.querySelector(".chancesOfSnowInDetailHour05").innerText =
   //   json.forecast.forecastday[currentDay].hour[5].chance_of_snow;
   // document.querySelector(".chancesOfRainInDetailHour05").innerText =
@@ -205,9 +204,9 @@ function calHourly(currentDay, json) {
     json.forecast.forecastday[currentDay].hour[6].temp_c + "˚C";
   document.querySelector(
     ".windInDetailHour06"
-  ).innerText = `Wind: ${json.forecast.forecastday[currentDay].hour[6].wind_dir}, ${json.forecast.forecastday[currentDay].hour[6].wind_kph}`;
+  ).innerText = `${json.forecast.forecastday[currentDay].hour[6].wind_dir}, ${json.forecast.forecastday[currentDay].hour[6].wind_kph} km/h`;
 
-  `Wind: ${json.current.wind_dir}, ${json.current.wind_kph} km/h 🍃 `;
+  // `${json.current.wind_dir}, ${json.current.wind_kph} km/h 🍃 `;
   // document.querySelector(".chancesOfSnowInDetailHour06").innerText =
   //   json.forecast.forecastday[currentDay].hour[6].chance_of_snow;
   // document.querySelector(".chancesOfRainInDetailHour06").innerText =
@@ -226,9 +225,9 @@ function calHourly(currentDay, json) {
     json.forecast.forecastday[currentDay].hour[7].temp_c + "˚C";
   document.querySelector(
     ".windInDetailHour07"
-  ).innerText = `Wind: ${json.forecast.forecastday[currentDay].hour[7].wind_dir}, ${json.forecast.forecastday[currentDay].hour[7].wind_kph}`;
+  ).innerText = `${json.forecast.forecastday[currentDay].hour[7].wind_dir}, ${json.forecast.forecastday[currentDay].hour[7].wind_kph} km/h`;
 
-  `Wind: ${json.current.wind_dir}, ${json.current.wind_kph} km/h 🍃 `;
+  // `${json.current.wind_dir}, ${json.current.wind_kph} km/h 🍃 `;
   // document.querySelector(".chancesOfSnowInDetailHour07").innerText =
   //   json.forecast.forecastday[currentDay].hour[7].chance_of_snow;
   // document.querySelector(".chancesOfRainInDetailHour07").innerText =
@@ -247,9 +246,9 @@ function calHourly(currentDay, json) {
     json.forecast.forecastday[currentDay].hour[8].temp_c + "˚C";
   document.querySelector(
     ".windInDetailHour08"
-  ).innerText = `Wind: ${json.forecast.forecastday[currentDay].hour[8].wind_dir}, ${json.forecast.forecastday[currentDay].hour[8].wind_kph}`;
+  ).innerText = `${json.forecast.forecastday[currentDay].hour[8].wind_dir}, ${json.forecast.forecastday[currentDay].hour[8].wind_kph} km/h`;
 
-  `Wind: ${json.current.wind_dir}, ${json.current.wind_kph} km/h 🍃 `;
+  // `${json.current.wind_dir}, ${json.current.wind_kph} km/h 🍃 `;
   // document.querySelector(".chancesOfSnowInDetailHour08").innerText =
   //   json.forecast.forecastday[currentDay].hour[8].chance_of_snow;
   // document.querySelector(".chancesOfRainInDetailHour08").innerText =
@@ -268,9 +267,9 @@ function calHourly(currentDay, json) {
     json.forecast.forecastday[currentDay].hour[9].temp_c + "˚C";
   document.querySelector(
     ".windInDetailHour09"
-  ).innerText = `Wind: ${json.forecast.forecastday[currentDay].hour[9].wind_dir}, ${json.forecast.forecastday[currentDay].hour[9].wind_kph}`;
+  ).innerText = `${json.forecast.forecastday[currentDay].hour[9].wind_dir}, ${json.forecast.forecastday[currentDay].hour[9].wind_kph} km/h`;
 
-  `Wind: ${json.current.wind_dir}, ${json.current.wind_kph} km/h 🍃 `;
+  // `${json.current.wind_dir}, ${json.current.wind_kph} km/h 🍃 `;
   // document.querySelector(".chancesOfSnowInDetailHour09").innerText =
   //   json.forecast.forecastday[currentDay].hour[9].chance_of_snow;
   // document.querySelector(".chancesOfRainInDetailHour09").innerText =
@@ -289,9 +288,9 @@ function calHourly(currentDay, json) {
     json.forecast.forecastday[currentDay].hour[10].temp_c + "˚C";
   document.querySelector(
     ".windInDetailHour10"
-  ).innerText = `Wind: ${json.forecast.forecastday[currentDay].hour[10].wind_dir}, ${json.forecast.forecastday[currentDay].hour[10].wind_kph}`;
+  ).innerText = `${json.forecast.forecastday[currentDay].hour[10].wind_dir}, ${json.forecast.forecastday[currentDay].hour[10].wind_kph} km/h`;
 
-  `Wind: ${json.current.wind_dir}, ${json.current.wind_kph} km/h 🍃 `;
+  // `${json.current.wind_dir}, ${json.current.wind_kph} km/h 🍃 `;
   // document.querySelector(".chancesOfSnowInDetailHour10").innerText =
   //   json.forecast.forecastday[currentDay].hour[10].chance_of_snow;
   // document.querySelector(".chancesOfRainInDetailHour10").innerText =
@@ -310,9 +309,9 @@ function calHourly(currentDay, json) {
     json.forecast.forecastday[currentDay].hour[11].temp_c + "˚C";
   document.querySelector(
     ".windInDetailHour11"
-  ).innerText = `Wind: ${json.forecast.forecastday[currentDay].hour[11].wind_dir}, ${json.forecast.forecastday[currentDay].hour[11].wind_kph}`;
+  ).innerText = `${json.forecast.forecastday[currentDay].hour[11].wind_dir}, ${json.forecast.forecastday[currentDay].hour[11].wind_kph} km/h`;
 
-  `Wind: ${json.current.wind_dir}, ${json.current.wind_kph} km/h 🍃 `;
+  // `${json.current.wind_dir}, ${json.current.wind_kph} km/h 🍃 `;
   // document.querySelector(".chancesOfSnowInDetailHour11").innerText =
   //   json.forecast.forecastday[currentDay].hour[11].chance_of_snow;
   // document.querySelector(".chancesOfRainInDetailHour11").innerText =
@@ -331,9 +330,9 @@ function calHourly(currentDay, json) {
     json.forecast.forecastday[currentDay].hour[12].temp_c + "˚C";
   document.querySelector(
     ".windInDetailHour12"
-  ).innerText = `Wind: ${json.forecast.forecastday[currentDay].hour[12].wind_dir}, ${json.forecast.forecastday[currentDay].hour[12].wind_kph}`;
+  ).innerText = `${json.forecast.forecastday[currentDay].hour[12].wind_dir}, ${json.forecast.forecastday[currentDay].hour[12].wind_kph} km/h`;
 
-  `Wind: ${json.current.wind_dir}, ${json.current.wind_kph} km/h 🍃 `;
+  // `${json.current.wind_dir}, ${json.current.wind_kph} km/h 🍃 `;
   // document.querySelector(".chancesOfSnowInDetailHour12").innerText =
   //   json.forecast.forecastday[currentDay].hour[12].chance_of_snow;
   // document.querySelector(".chancesOfRainInDetailHour12").innerText =
@@ -351,9 +350,9 @@ function calHourly(currentDay, json) {
     json.forecast.forecastday[currentDay].hour[13].temp_c + "˚C";
   document.querySelector(
     ".windInDetailHour13"
-  ).innerText = `Wind: ${json.forecast.forecastday[currentDay].hour[13].wind_dir}, ${json.forecast.forecastday[currentDay].hour[13].wind_kph}`;
+  ).innerText = `${json.forecast.forecastday[currentDay].hour[13].wind_dir}, ${json.forecast.forecastday[currentDay].hour[13].wind_kph} km/h`;
 
-  `Wind: ${json.current.wind_dir}, ${json.current.wind_kph} km/h 🍃 `;
+  // `${json.current.wind_dir}, ${json.current.wind_kph} km/h 🍃 `;
   // document.querySelector(".chancesOfSnowInDetailHour13").innerText =
   //   json.forecast.forecastday[currentDay].hour[13].chance_of_snow;
   // document.querySelector(".chancesOfRainInDetailHour13").innerText =
@@ -372,9 +371,9 @@ function calHourly(currentDay, json) {
     json.forecast.forecastday[currentDay].hour[14].temp_c + "˚C";
   document.querySelector(
     ".windInDetailHour14"
-  ).innerText = `Wind: ${json.forecast.forecastday[currentDay].hour[14].wind_dir}, ${json.forecast.forecastday[currentDay].hour[14].wind_kph}`;
+  ).innerText = `${json.forecast.forecastday[currentDay].hour[14].wind_dir}, ${json.forecast.forecastday[currentDay].hour[14].wind_kph} km/h`;
 
-  `Wind: ${json.current.wind_dir}, ${json.current.wind_kph} km/h 🍃 `;
+  // `${json.current.wind_dir}, ${json.current.wind_kph} km/h 🍃 `;
   // document.querySelector(".chancesOfSnowInDetailHour14").innerText =
   //   json.forecast.forecastday[currentDay].hour[14].chance_of_snow;
   // document.querySelector(".chancesOfRainInDetailHour14").innerText =
@@ -393,9 +392,9 @@ function calHourly(currentDay, json) {
     json.forecast.forecastday[currentDay].hour[15].temp_c + "˚C";
   document.querySelector(
     ".windInDetailHour15"
-  ).innerText = `Wind: ${json.forecast.forecastday[currentDay].hour[15].wind_dir}, ${json.forecast.forecastday[currentDay].hour[15].wind_kph}`;
+  ).innerText = `${json.forecast.forecastday[currentDay].hour[15].wind_dir}, ${json.forecast.forecastday[currentDay].hour[15].wind_kph} km/h`;
 
-  `Wind: ${json.current.wind_dir}, ${json.current.wind_kph} km/h 🍃 `;
+  // `${json.current.wind_dir}, ${json.current.wind_kph} km/h 🍃 `;
   // document.querySelector(".chancesOfSnowInDetailHour14").innerText =
   //   json.forecast.forecastday[currentDay].hour[15].chance_of_snow;
   // document.querySelector(".chancesOfRainInDetailHour14").innerText =
@@ -414,9 +413,9 @@ function calHourly(currentDay, json) {
     json.forecast.forecastday[currentDay].hour[16].temp_c + "˚C";
   document.querySelector(
     ".windInDetailHour16"
-  ).innerText = `Wind: ${json.forecast.forecastday[currentDay].hour[16].wind_dir}, ${json.forecast.forecastday[currentDay].hour[16].wind_kph}`;
+  ).innerText = `${json.forecast.forecastday[currentDay].hour[16].wind_dir}, ${json.forecast.forecastday[currentDay].hour[16].wind_kph} km/h`;
 
-  `Wind: ${json.current.wind_dir}, ${json.current.wind_kph} km/h 🍃 `;
+  // `${json.current.wind_dir}, ${json.current.wind_kph} km/h 🍃 `;
   // document.querySelector(".chancesOfSnowInDetailHour16").innerText =
   //   json.forecast.forecastday[currentDay].hour[16].chance_of_snow;
   // document.querySelector(".chancesOfRainInDetailHour16").innerText =
@@ -435,9 +434,9 @@ function calHourly(currentDay, json) {
     json.forecast.forecastday[currentDay].hour[17].temp_c + "˚C";
   document.querySelector(
     ".windInDetailHour17"
-  ).innerText = `Wind: ${json.forecast.forecastday[currentDay].hour[17].wind_dir}, ${json.forecast.forecastday[currentDay].hour[17].wind_kph}`;
+  ).innerText = `${json.forecast.forecastday[currentDay].hour[17].wind_dir}, ${json.forecast.forecastday[currentDay].hour[17].wind_kph} km/h`;
 
-  `Wind: ${json.current.wind_dir}, ${json.current.wind_kph} km/h 🍃 `;
+  // `${json.current.wind_dir}, ${json.current.wind_kph} km/h 🍃 `;
   // document.querySelector(".chancesOfSnowInDetailHour17").innerText =
   //   json.forecast.forecastday[currentDay].hour[17].chance_of_snow;
   // document.querySelector(".chancesOfRainInDetailHour17").innerText =
@@ -456,9 +455,9 @@ function calHourly(currentDay, json) {
     json.forecast.forecastday[currentDay].hour[18].temp_c + "˚C";
   document.querySelector(
     ".windInDetailHour18"
-  ).innerText = `Wind: ${json.forecast.forecastday[currentDay].hour[18].wind_dir}, ${json.forecast.forecastday[currentDay].hour[18].wind_kph}`;
+  ).innerText = `${json.forecast.forecastday[currentDay].hour[18].wind_dir}, ${json.forecast.forecastday[currentDay].hour[18].wind_kph} km/h`;
 
-  `Wind: ${json.current.wind_dir}, ${json.current.wind_kph} km/h 🍃 `;
+  // `${json.current.wind_dir}, ${json.current.wind_kph} km/h 🍃 `;
   // document.querySelector(".chancesOfSnowInDetailHour18").innerText =
   //   json.forecast.forecastday[currentDay].hour[18].chance_of_snow;
   // document.querySelector(".chancesOfRainInDetailHour18").innerText =
@@ -477,9 +476,9 @@ function calHourly(currentDay, json) {
     json.forecast.forecastday[currentDay].hour[19].temp_c + "˚C";
   document.querySelector(
     ".windInDetailHour19"
-  ).innerText = `Wind: ${json.forecast.forecastday[currentDay].hour[19].wind_dir}, ${json.forecast.forecastday[currentDay].hour[19].wind_kph}`;
+  ).innerText = `${json.forecast.forecastday[currentDay].hour[19].wind_dir}, ${json.forecast.forecastday[currentDay].hour[19].wind_kph} km/h`;
 
-  `Wind: ${json.current.wind_dir}, ${json.current.wind_kph} km/h 🍃 `;
+  // `${json.current.wind_dir}, ${json.current.wind_kph} km/h 🍃 `;
   // document.querySelector(".chancesOfSnowInDetailHour19").innerText =
   //   json.forecast.forecastday[currentDay].hour[19].chance_of_snow;
   // document.querySelector(".chancesOfRainInDetailHour19").innerText =
@@ -498,9 +497,9 @@ function calHourly(currentDay, json) {
     json.forecast.forecastday[currentDay].hour[20].temp_c + "˚C";
   document.querySelector(
     ".windInDetailHour20"
-  ).innerText = `Wind: ${json.forecast.forecastday[currentDay].hour[20].wind_dir}, ${json.forecast.forecastday[currentDay].hour[20].wind_kph}`;
+  ).innerText = `${json.forecast.forecastday[currentDay].hour[20].wind_dir}, ${json.forecast.forecastday[currentDay].hour[20].wind_kph} km/h`;
 
-  `Wind: ${json.current.wind_dir}, ${json.current.wind_kph} km/h 🍃 `;
+  // `${json.current.wind_dir}, ${json.current.wind_kph} km/h 🍃 `;
   // document.querySelector(".chancesOfSnowInDetailHour20").innerText =
   //   json.forecast.forecastday[currentDay].hour[20].chance_of_snow;
   // document.querySelector(".chancesOfRainInDetailHour20").innerText =
@@ -519,9 +518,9 @@ function calHourly(currentDay, json) {
     json.forecast.forecastday[currentDay].hour[21].temp_c + "˚C";
   document.querySelector(
     ".windInDetailHour21"
-  ).innerText = `Wind: ${json.forecast.forecastday[currentDay].hour[21].wind_dir}, ${json.forecast.forecastday[currentDay].hour[21].wind_kph}`;
+  ).innerText = `${json.forecast.forecastday[currentDay].hour[21].wind_dir}, ${json.forecast.forecastday[currentDay].hour[21].wind_kph} km/h`;
 
-  `Wind: ${json.current.wind_dir}, ${json.current.wind_kph} km/h 🍃 `;
+  // `${json.current.wind_dir}, ${json.current.wind_kph} km/h 🍃 `;
   // document.querySelector(".chancesOfSnowInDetailHour21").innerText =
   //   json.forecast.forecastday[currentDay].hour[21].chance_of_snow;
   // document.querySelector(".chancesOfRainInDetailHour21").innerText =
@@ -540,9 +539,9 @@ function calHourly(currentDay, json) {
     json.forecast.forecastday[currentDay].hour[22].temp_c + "˚C";
   document.querySelector(
     ".windInDetailHour22"
-  ).innerText = `Wind: ${json.forecast.forecastday[currentDay].hour[22].wind_dir}, ${json.forecast.forecastday[currentDay].hour[22].wind_kph}`;
+  ).innerText = `${json.forecast.forecastday[currentDay].hour[22].wind_dir}, ${json.forecast.forecastday[currentDay].hour[22].wind_kph} km/h`;
 
-  `Wind: ${json.current.wind_dir}, ${json.current.wind_kph} km/h 🍃 `;
+  // `${json.current.wind_dir}, ${json.current.wind_kph} km/h 🍃 `;
   // document.querySelector(".chancesOfSnowInDetailHour22").innerText =
   //   json.forecast.forecastday[currentDay].hour[22].chance_of_snow;
   // document.querySelector(".chancesOfRainInDetailHour22").innerText =
@@ -561,9 +560,9 @@ function calHourly(currentDay, json) {
     json.forecast.forecastday[currentDay].hour[23].temp_c + "˚C";
   document.querySelector(
     ".windInDetailHour23"
-  ).innerText = `Wind: ${json.forecast.forecastday[currentDay].hour[23].wind_dir}, ${json.forecast.forecastday[currentDay].hour[23].wind_kph}`;
+  ).innerText = `${json.forecast.forecastday[currentDay].hour[23].wind_dir}, ${json.forecast.forecastday[currentDay].hour[23].wind_kph} km/h`;
 
-  `Wind: ${json.current.wind_dir}, ${json.current.wind_kph} km/h 🍃 `;
+  // `${json.current.wind_dir}, ${json.current.wind_kph} km/h 🍃 `;
   // document.querySelector(".chancesOfSnowInDetailHour23").innerText =
   //   json.forecast.forecastday[currentDay].hour[23].chance_of_snow;
   // document.querySelector(".chancesOfRainInDetailHour23").innerText =
@@ -586,7 +585,7 @@ function day1Details() {
         ".overallInDetail"
       ).innerText = `" ${json.forecast.forecastday[0].day.condition.text} "`;
 
-      document.querySelector(".overallInDetail").classList.add("bglight");
+      // document.querySelector(".overallInDetail").classList.add("bglight");
 
       document.querySelector(
         ".locationInDetail"
@@ -601,7 +600,7 @@ function day1Details() {
 
       document.querySelector(
         ".temperatureInDetail"
-      ).innerText = `Min Temp: ${json.forecast.forecastday[0].day.mintemp_c}˚C \nMax Temp: ${json.forecast.forecastday[0].day.maxtemp_c}˚C`;
+      ).innerText = `Min: ${json.forecast.forecastday[0].day.mintemp_c}˚C, Max: ${json.forecast.forecastday[0].day.maxtemp_c}˚C`;
 
       document.querySelector(
         ".windInDetail"
@@ -648,7 +647,7 @@ function day2Details() {
         ".overallInDetail"
       ).innerText = `" ${json.forecast.forecastday[1].day.condition.text} "`;
 
-      document.querySelector(".overallInDetail").classList.add("bglight");
+      // document.querySelector(".overallInDetail").classList.add("bglight");
 
       document.querySelector(
         ".locationInDetail"
@@ -663,7 +662,7 @@ function day2Details() {
 
       document.querySelector(
         ".temperatureInDetail"
-      ).innerText = `Min Temp: ${json.forecast.forecastday[1].day.mintemp_c}˚C \nMax Temp: ${json.forecast.forecastday[1].day.maxtemp_c}˚C`;
+      ).innerText = `Min: ${json.forecast.forecastday[1].day.mintemp_c}˚C, Max: ${json.forecast.forecastday[1].day.maxtemp_c}˚C`;
 
       document.querySelector(
         ".windInDetail"
@@ -710,7 +709,7 @@ function day3Details() {
         ".overallInDetail"
       ).innerText = `" ${json.forecast.forecastday[2].day.condition.text} "`;
 
-      document.querySelector(".overallInDetail").classList.add("bglight");
+      // document.querySelector(".overallInDetail").classList.add("bglight");
 
       document.querySelector(
         ".locationInDetail"
@@ -725,7 +724,7 @@ function day3Details() {
 
       document.querySelector(
         ".temperatureInDetail"
-      ).innerText = `Min Temp: ${json.forecast.forecastday[2].day.mintemp_c}˚C \nMax Temp: ${json.forecast.forecastday[2].day.maxtemp_c}˚C`;
+      ).innerText = `Min: ${json.forecast.forecastday[2].day.mintemp_c}˚C, Max: ${json.forecast.forecastday[2].day.maxtemp_c}˚C`;
 
       document.querySelector(
         ".windInDetail"

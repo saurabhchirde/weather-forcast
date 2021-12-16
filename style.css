@@ -9,7 +9,7 @@ body {
 #bgImg {
   object-fit: cover;
   width: 100%;
-  max-height: 970px;
+  /* max-height: 970px; */
   display: block;
   margin: auto;
 }
@@ -90,11 +90,13 @@ button:hover {
 .day2,
 .day3 {
   display: inline-block;
-  width: 23%;
+  width: 150px;
+  height: 150px;
   margin: 0.7rem;
-  padding: 0.5rem;
+  padding: 1rem;
   border-radius: 20px;
   cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.2);
 }
 .day1:hover,
 .day2:hover,
@@ -227,11 +229,11 @@ a {
 }
 .onlyDateInDetail {
   position: absolute;
-  top: 22.5rem;
+  top: 22.8rem;
   font-size: 1.2rem;
   text-align: left;
   right: 2rem;
-  /* color: rgb(201, 201, 201); */
+  color: rgb(201, 201, 201);
 }
 .locationInDetail {
   position: absolute;
@@ -242,7 +244,7 @@ a {
 }
 .iconInDetail {
   position: relative;
-  top: 2rem;
+  top: 3rem;
 }
 .latitudeLongitudeInDetail {
   position: absolute;
@@ -254,7 +256,7 @@ a {
 .temperatureInDetail {
   position: absolute;
   right: 2rem;
-  top: 24.4rem;
+  top: 26.4rem;
   text-align: right;
   font-size: 1.2rem;
   line-height: 1.6;
@@ -295,19 +297,18 @@ a {
   right: 2rem;
   color: rgb(201, 201, 201);
 }
-/* .day1Details { */
-/* margin-top: 1rem; */
-/* } */
+
 .hour {
   position: relative;
   display: inline-block;
   top: 11rem;
-  font-size: 1rem;
-  width: 30%;
-  height: 180px;
-  margin: 0.5rem;
+  font-size: 0.8rem;
+  width: 110px;
+  height: 110px;
+  margin: 0.4rem;
+  padding: 0.7rem;
   border-radius: 10px;
-  background-color: gray;
+  background-color: rgba(0, 0, 0, 0.4);
 }
 .overallInDetailHour00,
 .overallInDetailHour01,
@@ -317,17 +318,152 @@ a {
 .overallInDetailHour05,
 .overallInDetailHour06,
 .overallInDetailHour07,
-.overallInDetailHour08 {
-  font-size: 1.1rem;
+.overallInDetailHour08,
+.overallInDetailHour09,
+.overallInDetailHour10,
+.overallInDetailHour11,
+.overallInDetailHour12,
+.overallInDetailHour13,
+.overallInDetailHour14,
+.overallInDetailHour15,
+.overallInDetailHour16,
+.overallInDetailHour17,
+.overallInDetailHour18,
+.overallInDetailHour19,
+.overallInDetailHour20,
+.overallInDetailHour21,
+.overallInDetailHour22,
+.overallInDetailHour23 {
+  position: relative;
+  font-size: 1rem;
 }
 
+/* 
+Hour00
+Hour01
+Hour02
+Hour03
+Hour04
+Hour05
+Hour06
+Hour07
+Hour08
+Hour09
+Hour10
+Hour11
+Hour12
+Hour13
+Hour14
+Hour15
+Hour16
+Hour17
+Hour18
+Hour19
+Hour20
+Hour21
+Hour22
+Hour23
+*/
+
 .inDetailTimeHour00,
-.iconInDetailHour00,
-.temperatureInDetailHour00,
-.windInDetailHour00,
-.chancesOfSnowInDetailHour00,
-.chancesOfRainInDetailHour00 {
+.inDetailTimeHour01,
+.inDetailTimeHour02,
+.inDetailTimeHour03,
+.inDetailTimeHour04,
+.inDetailTimeHour05,
+.inDetailTimeHour06,
+.inDetailTimeHour07,
+.inDetailTimeHour08,
+.inDetailTimeHour09,
+.inDetailTimeHour10,
+.inDetailTimeHour11,
+.inDetailTimeHour12,
+.inDetailTimeHour13,
+.inDetailTimeHour14,
+.inDetailTimeHour15,
+.inDetailTimeHour16,
+.inDetailTimeHour17,
+.inDetailTimeHour18,
+.inDetailTimeHour19,
+.inDetailTimeHour20,
+.inDetailTimeHour21,
+.inDetailTimeHour22,
+.inDetailTimeHour23 {
+  position: absolute;
+  bottom: 0.6rem;
+  left: 0.6rem;
+  font-size: 0.9rem;
 }
+
+/* .iconInDetailHour00 {
+  /* position: relative; */
+/* top: -0.4rem; */
+/* left: 0.6rem; */
+/* font-size: 0.9rem;
+} */
+
+.temperatureInDetailHour00,
+.temperatureInDetailHour01,
+.temperatureInDetailHour02,
+.temperatureInDetailHour03,
+.temperatureInDetailHour04,
+.temperatureInDetailHour05,
+.temperatureInDetailHour06,
+.temperatureInDetailHour07,
+.temperatureInDetailHour08,
+.temperatureInDetailHour09,
+.temperatureInDetailHour10,
+.temperatureInDetailHour11,
+.temperatureInDetailHour12,
+.temperatureInDetailHour13,
+.temperatureInDetailHour14,
+.temperatureInDetailHour15,
+.temperatureInDetailHour16,
+.temperatureInDetailHour17,
+.temperatureInDetailHour18,
+.temperatureInDetailHour19,
+.temperatureInDetailHour20,
+.temperatureInDetailHour21,
+.temperatureInDetailHour22,
+.temperatureInDetailHour23 {
+  position: absolute;
+  bottom: 0.5rem;
+  right: 0.6rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+.windInDetailHour00,
+.windInDetailHour01,
+.windInDetailHour02,
+.windInDetailHour03,
+.windInDetailHour04,
+.windInDetailHour05,
+.windInDetailHour06,
+.windInDetailHour07,
+.windInDetailHour08,
+.windInDetailHour09,
+.windInDetailHour10,
+.windInDetailHour11,
+.windInDetailHour12,
+.windInDetailHour13,
+.windInDetailHour14,
+.windInDetailHour15,
+.windInDetailHour16,
+.windInDetailHour17,
+.windInDetailHour18,
+.windInDetailHour19,
+.windInDetailHour20,
+.windInDetailHour21,
+.windInDetailHour22,
+.windInDetailHour23 {
+  position: absolute;
+  top: 5.5rem;
+  left: 0.6rem;
+  font-size: 0.8rem;
+  text-align: left;
+  display: none;
+}
+
 @media screen and (max-width: 720px) {
   h1 {
     font-size: 2.2rem;
@@ -387,11 +523,7 @@ a {
   }
   .day1,
   .day2,
-  .day3,
-  .day4,
-  .day5,
-  .day6,
-  .day7 {
+  .day3 {
     width: 30%;
     margin: 0.5rem;
     padding: 0.5rem;
@@ -452,6 +584,101 @@ a {
     font-size: 0.8rem;
     top: 45.3rem;
   }
+  .overallInDetail,
+  .locationInDetail,
+  .iconInDetail,
+  .latitudeLongitudeInDetail,
+  .temperatureInDetail,
+  .windInDetail,
+  .humidityInDetail,
+  .onlyDateInDetail,
+  .onlyTimeInDetail,
+  .sunriseSunsetTimeInDetail,
+  .moonriseMoonsetTimeInDetail,
+  .chancesOfSnowInDetail,
+  .chancesOfRainInDetail {
+    font-size: 1.2rem;
+  }
+  .hr2 {
+    left: 0%;
+    right: 0%;
+    height: 240px;
+    padding: 2% 0% 3%;
+  }
+
+  .overallInDetail {
+    top: 18.4rem;
+    font-size: 1.4rem;
+  }
+  .onlyTimeInDetail {
+    top: 21.5rem;
+    font-size: 1.1rem;
+  }
+  .onlyDateInDetail {
+    top: 21.8rem;
+    font-size: 1.1rem;
+  }
+  .locationInDetail {
+    top: 18.1rem;
+    font-size: 1.3rem;
+  }
+
+  .latitudeLongitudeInDetail {
+    font-size: 1.1rem;
+    top: 25.6rem;
+  }
+  .temperatureInDetail {
+    top: 25.4rem;
+    font-size: 1.1rem;
+  }
+  .windInDetail {
+    font-size: 1.1rem;
+    top: 27.4rem;
+  }
+  .humidityInDetail {
+    font-size: 1.1rem;
+    top: 27.7rem;
+  }
+
+  .sunriseSunsetTimeInDetail {
+    top: 29.5rem;
+    font-size: 1.1rem;
+  }
+  .moonriseMoonsetTimeInDetail {
+    top: 29.5rem;
+    font-size: 1.1rem;
+  }
+
+  .temperatureInDetailHour00,
+  .temperatureInDetailHour01,
+  .temperatureInDetailHour02,
+  .temperatureInDetailHour03,
+  .temperatureInDetailHour04,
+  .temperatureInDetailHour05,
+  .temperatureInDetailHour06,
+  .temperatureInDetailHour07,
+  .temperatureInDetailHour08,
+  .temperatureInDetailHour09,
+  .temperatureInDetailHour10,
+  .temperatureInDetailHour11,
+  .temperatureInDetailHour12,
+  .temperatureInDetailHour13,
+  .temperatureInDetailHour14,
+  .temperatureInDetailHour15,
+  .temperatureInDetailHour16,
+  .temperatureInDetailHour17,
+  .temperatureInDetailHour18,
+  .temperatureInDetailHour19,
+  .temperatureInDetailHour20,
+  .temperatureInDetailHour21,
+  .temperatureInDetailHour22,
+  .temperatureInDetailHour23 {
+    position: absolute;
+    bottom: 0.5rem;
+    right: 0.6rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+  }
 }
 
 @media screen and (max-width: 520px) {
@@ -486,13 +713,8 @@ a {
     top: 18rem;
   }
   .day1,
-  .day2,
-  .day3,
-  .day4,
-  .day5,
-  .day6,
-  .day7 {
-    width: 40%;
+  .day2 {
+    width: 33%;
   }
   .details2 {
     font-size: 1rem;
@@ -517,5 +739,228 @@ a {
   .icon {
     right: 0;
     top: 16.3rem;
+  }
+  .overallInDetail,
+  .locationInDetail,
+  .iconInDetail,
+  .latitudeLongitudeInDetail,
+  .temperatureInDetail,
+  .windInDetail,
+  .humidityInDetail,
+  .onlyDateInDetail,
+  .onlyTimeInDetail,
+  .sunriseSunsetTimeInDetail,
+  .moonriseMoonsetTimeInDetail,
+  .chancesOfSnowInDetail,
+  .chancesOfRainInDetail {
+    font-size: 1rem;
+  }
+  .hr2 {
+    position: absolute;
+    left: 0%;
+    right: 0%;
+    max-width: 700px;
+    height: 230px;
+    margin: -2.5rem auto 1rem;
+    padding: 2% 6% 3%;
+    background-color: rgba(0, 0, 0, 0.4);
+    text-align: center;
+  }
+
+  .overallInDetail {
+    position: absolute;
+    top: 17.4rem;
+    right: 0.5rem;
+    text-align: center;
+    margin: auto;
+    font-size: 1.2rem;
+    font-weight: 100;
+  }
+  .onlyTimeInDetail {
+    position: absolute;
+    text-align: left;
+    left: 0.5rem;
+    top: 20.5rem;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: rgb(201, 201, 201);
+  }
+  .onlyDateInDetail {
+    position: absolute;
+    top: 20.8rem;
+    font-size: 1rem;
+    text-align: left;
+    right: 0.5rem;
+    color: rgb(201, 201, 201);
+  }
+  .locationInDetail {
+    position: absolute;
+    top: 17.1rem;
+    left: 0.5rem;
+    font-size: 1.1rem;
+    font-weight: 100;
+  }
+  .iconInDetail {
+    position: relative;
+    top: 6rem;
+  }
+  .latitudeLongitudeInDetail {
+    position: absolute;
+    left: 0.5rem;
+    font-size: 1rem;
+    top: 23.6rem;
+    color: rgb(201, 201, 201);
+  }
+  .temperatureInDetail {
+    position: absolute;
+    right: 0.5rem;
+    top: 23.4rem;
+    text-align: right;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: rgb(201, 201, 201);
+  }
+  .windInDetail {
+    position: absolute;
+    left: 0.5rem;
+    text-align: left;
+    font-size: 1rem;
+    top: 25.4rem;
+    color: rgb(201, 201, 201);
+  }
+  .humidityInDetail {
+    position: absolute;
+    right: 0.5rem;
+    text-align: right;
+    font-size: 1rem;
+    top: 25.7rem;
+    color: rgb(201, 201, 201);
+  }
+
+  .sunriseSunsetTimeInDetail {
+    position: absolute;
+    left: 0.5rem;
+    top: 27.5rem;
+    line-height: 1.6;
+    font-size: 1rem;
+    text-align: left;
+    color: rgb(201, 201, 201);
+  }
+  .moonriseMoonsetTimeInDetail {
+    position: absolute;
+    top: 27.5rem;
+    line-height: 1.6;
+    font-size: 1rem;
+    text-align: right;
+    right: 0.5rem;
+    color: rgb(201, 201, 201);
+  }
+
+  .hour {
+    position: relative;
+    display: inline-block;
+    top: 11rem;
+    font-size: 0.7rem;
+    width: 105px;
+    height: 105px;
+    margin: 0.4rem;
+    padding: 0.7rem;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+  .overallInDetailHour00,
+  .overallInDetailHour01,
+  .overallInDetailHour02,
+  .overallInDetailHour03,
+  .overallInDetailHour04,
+  .overallInDetailHour05,
+  .overallInDetailHour06,
+  .overallInDetailHour07,
+  .overallInDetailHour08,
+  .overallInDetailHour09,
+  .overallInDetailHour10,
+  .overallInDetailHour11,
+  .overallInDetailHour12,
+  .overallInDetailHour13,
+  .overallInDetailHour14,
+  .overallInDetailHour15,
+  .overallInDetailHour16,
+  .overallInDetailHour17,
+  .overallInDetailHour18,
+  .overallInDetailHour19,
+  .overallInDetailHour20,
+  .overallInDetailHour21,
+  .overallInDetailHour22,
+  .overallInDetailHour23 {
+    position: relative;
+    font-size: 0.9rem;
+  }
+
+  .inDetailTimeHour00,
+  .inDetailTimeHour01,
+  .inDetailTimeHour02,
+  .inDetailTimeHour03,
+  .inDetailTimeHour04,
+  .inDetailTimeHour05,
+  .inDetailTimeHour06,
+  .inDetailTimeHour07,
+  .inDetailTimeHour08,
+  .inDetailTimeHour09,
+  .inDetailTimeHour10,
+  .inDetailTimeHour11,
+  .inDetailTimeHour12,
+  .inDetailTimeHour13,
+  .inDetailTimeHour14,
+  .inDetailTimeHour15,
+  .inDetailTimeHour16,
+  .inDetailTimeHour17,
+  .inDetailTimeHour18,
+  .inDetailTimeHour19,
+  .inDetailTimeHour20,
+  .inDetailTimeHour21,
+  .inDetailTimeHour22,
+  .inDetailTimeHour23 {
+    position: absolute;
+    bottom: 0.6rem;
+    left: 0.6rem;
+    font-size: 0.8rem;
+  }
+
+  .iconInDetailHour00 {
+    position: relative;
+    top: -0.4rem;
+
+    font-size: 0.9rem;
+  }
+
+  .temperatureInDetailHour00,
+  .temperatureInDetailHour01,
+  .temperatureInDetailHour02,
+  .temperatureInDetailHour03,
+  .temperatureInDetailHour04,
+  .temperatureInDetailHour05,
+  .temperatureInDetailHour06,
+  .temperatureInDetailHour07,
+  .temperatureInDetailHour08,
+  .temperatureInDetailHour09,
+  .temperatureInDetailHour10,
+  .temperatureInDetailHour11,
+  .temperatureInDetailHour12,
+  .temperatureInDetailHour13,
+  .temperatureInDetailHour14,
+  .temperatureInDetailHour15,
+  .temperatureInDetailHour16,
+  .temperatureInDetailHour17,
+  .temperatureInDetailHour18,
+  .temperatureInDetailHour19,
+  .temperatureInDetailHour20,
+  .temperatureInDetailHour21,
+  .temperatureInDetailHour22,
+  .temperatureInDetailHour23 {
+    position: absolute;
+    bottom: 0.6rem;
+    right: 0.5rem;
+    font-size: 1rem;
+    font-weight: bold;
   }
 }
