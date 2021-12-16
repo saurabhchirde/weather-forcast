@@ -194,6 +194,7 @@ a {
   text-decoration: none;
   color: rgb(218, 218, 218);
 }
+
 .overallInDetail,
 .locationInDetail,
 .iconInDetail,
@@ -674,14 +675,9 @@ a {
     height: 805px;
   }
   .container {
-    /* left: 0%;
-    right: 0%;
-    margin: 0; */
-    /* max-width: 700px; */
     max-height: 1700px;
-    /* margin: auto; */
-    padding: 2% 4% 43%;
-    /* border-radius: 0; */
+    padding: 2% 0 43%;
+    margin: 0;
   }
   label {
     font-size: 1.3rem;
@@ -698,8 +694,9 @@ a {
     top: 18rem;
   }
   .day1,
-  .day2 {
-    width: 33%;
+  .day2,
+  .day3 {
+    width: 110px;
   }
   .details2 {
     font-size: 1rem;
@@ -846,9 +843,9 @@ a {
     display: inline-block;
     top: 11rem;
     font-size: 0.7rem;
-    width: 105px;
-    height: 105px;
-    margin: 0.4rem;
+    width: 95px;
+    height: 95px;
+    margin: 0.2rem;
     padding: 0.7rem;
     border-radius: 10px;
     background-color: rgba(0, 0, 0, 0.4);
