@@ -576,6 +576,7 @@ function day1Details() {
 
   let txt = inputCity.value;
   var fullForecastApi = forecastApi + txt + "&days=7";
+  document.querySelector("#bgImg").height = "1750";
 
   fetch(fullForecastApi)
     .then((res) => res.json())
@@ -585,11 +586,11 @@ function day1Details() {
         ".overallInDetail"
       ).innerText = `" ${json.forecast.forecastday[0].day.condition.text} "`;
 
-      // document.querySelector(".overallInDetail").classList.add("bglight");
-
       document.querySelector(
         ".locationInDetail"
       ).innerText = `🌎 ${json.location.name}, ${json.location.region}, ${json.location.country}`;
+
+      document.querySelector(".hr4").classList.add("hrVisible4");
 
       document.querySelector(
         ".iconInDetail"
@@ -638,6 +639,7 @@ function day2Details() {
 
   let txt = inputCity.value;
   var fullForecastApi = forecastApi + txt + "&days=7";
+  document.querySelector("#bgImg").height = "1750";
 
   fetch(fullForecastApi)
     .then((res) => res.json())
@@ -697,6 +699,7 @@ function day3Details() {
   output.classList.add("hide");
   document.querySelector(".outputForecast").classList.add("hide");
   document.querySelector(".forecastInDetail").classList.remove("hide");
+  document.querySelector("#bgImg").height = "1750";
 
   let txt = inputCity.value;
   var fullForecastApi = forecastApi + txt + "&days=7";
@@ -759,6 +762,8 @@ function fetchForecastApi(fullForecastApi) {
   fetch(fullForecastApi)
     .then((res) => res.json())
     .then((data) => {
+      document.querySelector(".hr3").classList.add("hrVisible3");
+
       document.querySelector(
         ".forecastLocation"
       ).innerText = `${data.location.name}, ${data.location.region}, ${data.location.country}`;
@@ -921,6 +926,7 @@ function findWeather() {
   document.querySelector(".forecastInDetail").classList.add("hide");
   document.querySelector(".outputForecast").classList.add("hide");
   document.querySelector(".error").innerText = "";
+  document.querySelector("#bgImg").height = "1080";
 
   if (txt !== "") {
     const fullApiUrl = apiUrl + txt + "&aqi=yes";
@@ -940,7 +946,7 @@ function weatherForecastThreeDays() {
   document.querySelector(".forecastInDetail").classList.add("hide");
   output.classList.add("hide");
   document.querySelector(".error").innerText = "";
-
+  document.querySelector("#bgImg").height = "1080";
   if (txt !== "") {
     var fullForecastApi = forecastApi + txt + "&days=7";
     fetchForecastApi(fullForecastApi);

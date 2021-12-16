@@ -19,14 +19,15 @@ body {
   margin: auto;
   text-align: center;
 }
+
 .container {
   position: absolute;
   left: 2%;
   right: 2%;
   max-width: 700px;
-  height: 860px;
+  max-height: 1680px;
   margin: auto;
-  padding: 2% 4% 3%;
+  padding: 2% 4% 22%;
   background-color: rgba(0, 0, 0, 0.6);
   text-align: center;
   border-radius: 0 0 20px 20px;
@@ -123,6 +124,18 @@ button:hover {
   margin: -1rem auto auto;
   border-top: 1px solid white;
 }
+.hrVisible3 {
+  margin: 1rem auto 1rem;
+  border-top: 1px solid white;
+  width: 80%;
+}
+.hrVisible4 {
+  position: relative;
+  top: 1.5rem;
+  margin: -0.5rem auto 1rem;
+  width: 80%;
+  border-top: 1px solid white;
+}
 .location {
   text-align: center;
   font-size: 1.4rem;
@@ -195,13 +208,11 @@ a {
 .chancesOfSnowInDetail,
 .chancesOfRainInDetail {
   font-size: 1.3rem;
-  /* position: relative; */
 }
 .hr2 {
   position: absolute;
   left: 0%;
   right: 0%;
-  max-width: 700px;
   height: 230px;
   margin: -2.5rem auto 1rem;
   padding: 2% 6% 3%;
@@ -222,14 +233,14 @@ a {
   position: absolute;
   text-align: left;
   left: 2rem;
-  top: 22.5rem;
+  top: 23.5rem;
   font-size: 1.2rem;
   line-height: 1.6;
   color: rgb(201, 201, 201);
 }
 .onlyDateInDetail {
   position: absolute;
-  top: 22.8rem;
+  top: 23.8rem;
   font-size: 1.2rem;
   text-align: left;
   right: 2rem;
@@ -338,33 +349,6 @@ a {
   font-size: 1rem;
 }
 
-/* 
-Hour00
-Hour01
-Hour02
-Hour03
-Hour04
-Hour05
-Hour06
-Hour07
-Hour08
-Hour09
-Hour10
-Hour11
-Hour12
-Hour13
-Hour14
-Hour15
-Hour16
-Hour17
-Hour18
-Hour19
-Hour20
-Hour21
-Hour22
-Hour23
-*/
-
 .inDetailTimeHour00,
 .inDetailTimeHour01,
 .inDetailTimeHour02,
@@ -394,13 +378,6 @@ Hour23
   left: 0.6rem;
   font-size: 0.9rem;
 }
-
-/* .iconInDetailHour00 {
-  /* position: relative; */
-/* top: -0.4rem; */
-/* left: 0.6rem; */
-/* font-size: 0.9rem;
-} */
 
 .temperatureInDetailHour00,
 .temperatureInDetailHour01,
@@ -474,14 +451,19 @@ Hour23
   .lgContainer {
     height: 900px;
   }
+  .container2 {
+    left: 0%;
+    right: 0%;
+    height: 500px;
+  }
   .container {
     left: 0%;
     right: 0%;
-    height: 100%;
-    margin: 0;
-    padding: 1rem auto;
+    max-width: 700px;
+    max-height: 1750px;
+    margin: auto;
+    padding: 2% 4% 32%;
   }
-
   input {
     width: 58%;
     font-size: 1.1rem;
@@ -600,8 +582,6 @@ Hour23
     font-size: 1.2rem;
   }
   .hr2 {
-    left: 0%;
-    right: 0%;
     height: 240px;
     padding: 2% 0% 3%;
   }
@@ -687,8 +667,6 @@ Hour23
   }
   #bgImg {
     object-fit: cover;
-    height: 830px;
-
     display: block;
     margin: auto;
   }
@@ -696,7 +674,14 @@ Hour23
     height: 805px;
   }
   .container {
-    border-radius: 0;
+    /* left: 0%;
+    right: 0%;
+    margin: 0; */
+    /* max-width: 700px; */
+    max-height: 1700px;
+    /* margin: auto; */
+    padding: 2% 4% 43%;
+    /* border-radius: 0; */
   }
   label {
     font-size: 1.3rem;
