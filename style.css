@@ -927,7 +927,6 @@ a {
     right: 0.5rem;
     text-align: right;
   }
-
   .hr2 {
     position: absolute;
     left: 0%;
@@ -944,14 +943,12 @@ a {
     top: 15.5rem;
     right: 0.5rem;
     font-size: 1.1rem;
-    font-weight: 100;
   }
   .locationInDetail {
     position: absolute;
     top: 15.5rem;
     left: 0.5rem;
     font-size: 1.1rem;
-    font-weight: 100;
   }
   .onlyTimeInDetail {
     position: absolute;

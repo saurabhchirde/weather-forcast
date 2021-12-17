@@ -447,7 +447,7 @@ function day1Details() {
 
       document.querySelector(
         ".locationInDetail"
-      ).innerText = `🌎 ${json.location.name}, ${json.location.region}, ${json.location.country}`;
+      ).innerText = `${json.location.name}, ${json.location.region}, ${json.location.country}`;
 
       document.querySelector(".hr4").classList.add("hrVisible4");
 
@@ -510,7 +510,7 @@ function day2Details() {
 
       document.querySelector(
         ".locationInDetail"
-      ).innerText = `🌎 ${json.location.name}, ${json.location.region}, ${json.location.country}`;
+      ).innerText = `${json.location.name}, ${json.location.region}, ${json.location.country}`;
       document.querySelector(".hr4").classList.add("hrVisible4");
       document.querySelector(
         ".iconInDetail"
@@ -571,7 +571,7 @@ function day3Details() {
 
       document.querySelector(
         ".locationInDetail"
-      ).innerText = `🌎 ${json.location.name}, ${json.location.region}, ${json.location.country}`;
+      ).innerText = `${json.location.name}, ${json.location.region}, ${json.location.country}`;
       document.querySelector(".hr4").classList.add("hrVisible4");
       document.querySelector(
         ".iconInDetail"
