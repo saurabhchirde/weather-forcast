@@ -488,9 +488,6 @@ a {
   #bgImg {
     object-fit: cover;
   }
-  .lgContainer {
-    /* height: 900px; */
-  }
   .container2 {
     left: 0%;
     right: 0%;
@@ -531,7 +528,6 @@ a {
     width: 320px;
     text-align: right;
     font-size: 1.3rem;
-    font-weight: 300;
   }
   .hrVisible {
     position: absolute;
@@ -557,7 +553,6 @@ a {
     left: 0;
     width: 380px;
     text-align: left;
-    font-weight: 300;
     top: 14.5rem;
     font-size: 1.3rem;
   }
@@ -826,6 +821,10 @@ a {
   button {
     font-size: 1.2rem;
   }
+  .details,
+  .details2 {
+    font-size: 1rem;
+  }
   .overall {
     font-size: 1.1rem;
     width: 200px;
@@ -837,12 +836,9 @@ a {
   .day3 {
     width: 110px;
   }
-  .details,
-  .details2 {
-    font-size: 1rem;
-  }
+
   .hrVisible {
-    width: 300px;
+    width: 50%;
     top: 17.5rem;
   }
   .hrVisible4 {
@@ -854,6 +850,11 @@ a {
     width: 300px;
     left: 0;
     top: 14rem;
+  }
+  .onlyTimeZone {
+    left: 0rem;
+    top: 17rem;
+    text-align: left;
   }
   .latitudeLongitude {
     top: 21.3rem;
