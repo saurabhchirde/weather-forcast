@@ -576,7 +576,11 @@ function day1Details() {
 
   let txt = inputCity.value;
   var fullForecastApi = forecastApi + txt + "&days=7";
-  document.querySelector("#bgImg").height = "1750";
+  document.querySelector("#bgImg").height = "1600";
+
+  document.querySelector(".previousDay").classList.add("hide");
+  document.querySelector(".nextDay").classList.remove("hide");
+  document.querySelector(".nextDay").addEventListener("click", day2Details);
 
   fetch(fullForecastApi)
     .then((res) => res.json())
@@ -639,7 +643,12 @@ function day2Details() {
 
   let txt = inputCity.value;
   var fullForecastApi = forecastApi + txt + "&days=7";
-  document.querySelector("#bgImg").height = "1750";
+  document.querySelector("#bgImg").height = "1600";
+
+  document.querySelector(".nextDay").classList.remove("hide");
+  document.querySelector(".previousDay").classList.remove("hide");
+  document.querySelector(".nextDay").addEventListener("click", day3Details);
+  document.querySelector(".previousDay").addEventListener("click", day1Details);
 
   fetch(fullForecastApi)
     .then((res) => res.json())
@@ -648,8 +657,6 @@ function day2Details() {
       document.querySelector(
         ".overallInDetail"
       ).innerText = `" ${json.forecast.forecastday[1].day.condition.text} "`;
-
-      // document.querySelector(".overallInDetail").classList.add("bglight");
 
       document.querySelector(
         ".locationInDetail"
@@ -699,10 +706,13 @@ function day3Details() {
   output.classList.add("hide");
   document.querySelector(".outputForecast").classList.add("hide");
   document.querySelector(".forecastInDetail").classList.remove("hide");
-  document.querySelector("#bgImg").height = "1750";
+  document.querySelector("#bgImg").height = "1600";
 
   let txt = inputCity.value;
   var fullForecastApi = forecastApi + txt + "&days=7";
+  document.querySelector(".nextDay").classList.add("hide");
+  document.querySelector(".previousDay").classList.remove("hide");
+  document.querySelector(".previousDay").addEventListener("click", day2Details);
 
   fetch(fullForecastApi)
     .then((res) => res.json())
@@ -711,8 +721,6 @@ function day3Details() {
       document.querySelector(
         ".overallInDetail"
       ).innerText = `" ${json.forecast.forecastday[2].day.condition.text} "`;
-
-      // document.querySelector(".overallInDetail").classList.add("bglight");
 
       document.querySelector(
         ".locationInDetail"
