@@ -46,6 +46,7 @@ const forecastIcon3 = document.querySelector(".forecastIcon3");
 const day3El = document.querySelector(".day3");
 
 var iconTime = "day";
+let currentDay = 0;
 
 overall.classList.remove("bglight");
 locationEl.classList.remove("bglight");
@@ -630,7 +631,7 @@ function day1Details() {
         ".moonriseMoonsetTimeInDetail"
       ).innerText = `Moonrise: ${json.forecast.forecastday[0].astro.moonrise}\nMoonset : ${json.forecast.forecastday[0].astro.moonset}`;
 
-      let currentDay = 0;
+      currentDay = 0;
 
       calHourly(currentDay, json);
     });
@@ -645,10 +646,10 @@ function day2Details() {
   var fullForecastApi = forecastApi + txt + "&days=7";
   document.querySelector("#bgImg").height = "1600";
 
-  document.querySelector(".nextDay").classList.remove("hide");
   document.querySelector(".previousDay").classList.remove("hide");
-  document.querySelector(".nextDay").addEventListener("click", day3Details);
   document.querySelector(".previousDay").addEventListener("click", day1Details);
+  document.querySelector(".nextDay").classList.remove("hide");
+  document.querySelector(".nextDay").addEventListener("click", day3Details);
 
   fetch(fullForecastApi)
     .then((res) => res.json())
@@ -696,7 +697,7 @@ function day2Details() {
         ".moonriseMoonsetTimeInDetail"
       ).innerText = `Moonrise: ${json.forecast.forecastday[1].astro.moonrise}\nMoonset : ${json.forecast.forecastday[1].astro.moonset}`;
 
-      let currentDay = 1;
+      currentDay = 1;
 
       calHourly(currentDay, json);
     });
@@ -760,7 +761,7 @@ function day3Details() {
         ".moonriseMoonsetTimeInDetail"
       ).innerText = `Moonrise: ${json.forecast.forecastday[2].astro.moonrise}\nMoonset : ${json.forecast.forecastday[2].astro.moonset}`;
 
-      let currentDay = 2;
+      currentDay = 2;
 
       calHourly(currentDay, json);
     });
