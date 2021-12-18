@@ -445,6 +445,9 @@ function day1Details() {
         ".overallInDetail"
       ).innerText = `" ${json.forecast.forecastday[0].day.condition.text} "`;
 
+      var todayDate = json.current.last_updated.slice(0, 10);
+      document.querySelector(".todayDate").innerText = `Today: ${todayDate}`;
+
       document.querySelector(
         ".locationInDetail"
       ).innerText = `${json.location.name}, ${json.location.region}, ${json.location.country}`;
@@ -472,7 +475,7 @@ function day1Details() {
 
       document.querySelector(
         ".onlyDateInDetail"
-      ).innerText = `Date : ${json.forecast.forecastday[0].date}`;
+      ).innerText = `${json.forecast.forecastday[0].date}`;
 
       document.querySelector(
         ".onlyTimeInDetail"
@@ -508,6 +511,9 @@ function day2Details() {
         ".overallInDetail"
       ).innerText = `" ${json.forecast.forecastday[1].day.condition.text} "`;
 
+      var todayDate = json.current.last_updated.slice(0, 10);
+      document.querySelector(".todayDate").innerText = `Today: ${todayDate}`;
+
       document.querySelector(
         ".locationInDetail"
       ).innerText = `${json.location.name}, ${json.location.region}, ${json.location.country}`;
@@ -533,7 +539,7 @@ function day2Details() {
 
       document.querySelector(
         ".onlyDateInDetail"
-      ).innerText = `Date : ${json.forecast.forecastday[1].date}`;
+      ).innerText = `${json.forecast.forecastday[1].date}`;
 
       document.querySelector(
         ".onlyTimeInDetail"
@@ -565,6 +571,8 @@ function day3Details() {
     .then((res) => res.json())
     .then((json) => {
       // main
+
+      var todayDate = json.current.last_updated.slice(0, 10);
       document.querySelector(
         ".overallInDetail"
       ).innerText = `" ${json.forecast.forecastday[2].day.condition.text} "`;
@@ -579,7 +587,7 @@ function day3Details() {
       document.querySelector(
         ".latitudeLongitudeInDetail"
       ).innerText = `Lat: ${json.location.lat}, Lon: ${json.location.lon}`;
-
+      document.querySelector(".todayDate").innerText = `Today: ${todayDate}`;
       document.querySelector(
         ".temperatureInDetail"
       ).innerText = `Min: ${json.forecast.forecastday[2].day.mintemp_c}˚C, Max: ${json.forecast.forecastday[2].day.maxtemp_c}˚C`;
@@ -594,7 +602,7 @@ function day3Details() {
 
       document.querySelector(
         ".onlyDateInDetail"
-      ).innerText = `Date : ${json.forecast.forecastday[2].date}`;
+      ).innerText = `${json.forecast.forecastday[2].date}`;
 
       document.querySelector(
         ".onlyTimeInDetail"
@@ -738,7 +746,6 @@ function fetchApi(fullApiUrl) {
       var lat = json.location.lat;
       var long = json.location.lon;
       var city = json.location.name;
-      var region = json.location.region;
       var country = json.location.country;
       var tz = json.location.tz_id;
       var wind_dir = json.current.wind_dir;
@@ -751,7 +758,7 @@ function fetchApi(fullApiUrl) {
       hrEl.classList.add("hrVisible");
       overall.innerText = `" ${partial} "`;
       overall.classList.add("bglight");
-      locationEl.innerText = `${city}, ${region}, ${country}`;
+      locationEl.innerText = `${city}, ${country}`;
       locationEl.classList.add("bglight");
 
       latitudeLongitudeEl.innerText = `Latitude: ${lat} \nLongitude: ${long}`;
@@ -815,22 +822,10 @@ function weatherForecastThreeDays() {
 
 btnForcast.addEventListener("click", weatherForecastThreeDays);
 
-day1El.addEventListener("click", () => {
-  document.querySelector(".previousDay").classList.add("hideVisibility");
-  document.querySelector(".nextDay").classList.remove("hideVisibility");
-  document.querySelector(".nextDay").addEventListener("click", day2Details);
-  day1Details();
-});
-day2El.addEventListener("click", () => {
-  document.querySelector(".previousDay").classList.remove("hideVisibility");
-  document.querySelector(".nextDay").classList.remove("hideVisibility");
-  document.querySelector(".previousDay").addEventListener("click", day1Details);
-  document.querySelector(".nextDay").addEventListener("click", day3Details);
-  day2Details();
-});
-day3El.addEventListener("click", () => {
-  document.querySelector(".nextDay").classList.add("hideVisibility");
-  document.querySelector(".previousDay").classList.remove("hideVisibility");
-  document.querySelector(".previousDay").addEventListener("click", day2Details);
-  day3Details();
-});
+day1El.addEventListener("click", day1Details);
+day2El.addEventListener("click", day2Details);
+day3El.addEventListener("click", day3Details);
+
+document
+  .querySelector(".back")
+  .addEventListener("click", weatherForecastThreeDays);
