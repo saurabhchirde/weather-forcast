@@ -66,7 +66,7 @@ const imageApi = "https://api.unsplash.com/search/photos?query=";
 const forecastApi =
   "https://api.weatherapi.com/v1/forecast.json?key=dbb97da661744d27b6b80803210312&q=";
 
-function calHourly(currentDay, json) {
+const calHourly = (currentDay, json) => {
   // hourly00
   document.querySelector(".overallInDetailHour00").innerText =
     json.forecast.forecastday[currentDay].hour[0].condition.text;
@@ -426,7 +426,7 @@ function calHourly(currentDay, json) {
   document.querySelector(
     ".windInDetailHour23"
   ).innerText = `${json.forecast.forecastday[currentDay].hour[23].wind_dir}, ${json.forecast.forecastday[currentDay].hour[23].wind_kph} km/h`;
-}
+};
 const day1Details = () => {
   output.classList.add("hide");
   document.querySelector(".outputForecast").classList.add("hide");
