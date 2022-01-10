@@ -427,8 +427,7 @@ function calHourly(currentDay, json) {
     ".windInDetailHour23"
   ).innerText = `${json.forecast.forecastday[currentDay].hour[23].wind_dir}, ${json.forecast.forecastday[currentDay].hour[23].wind_kph} km/h`;
 }
-
-function day1Details() {
+const day1Details = () => {
   output.classList.add("hide");
   document.querySelector(".outputForecast").classList.add("hide");
   document.querySelector(".forecastInDetail").classList.remove("hide");
@@ -492,9 +491,9 @@ function day1Details() {
 
       calHourly(currentDay, json);
     });
-}
+};
 
-function day2Details() {
+const day2Details = () => {
   output.classList.add("hide");
   document.querySelector(".outputForecast").classList.add("hide");
   document.querySelector(".forecastInDetail").classList.remove("hide");
@@ -556,9 +555,9 @@ function day2Details() {
 
       calHourly(currentDay, json);
     });
-}
+};
 
-function day3Details() {
+const day3Details = () => {
   output.classList.add("hide");
   document.querySelector(".outputForecast").classList.add("hide");
   document.querySelector(".forecastInDetail").classList.remove("hide");
@@ -619,9 +618,9 @@ function day3Details() {
 
       calHourly(currentDay, json);
     });
-}
+};
 
-function fetchForecastApi(fullForecastApi) {
+const fetchForecastApi = (fullForecastApi) => {
   fetch(fullForecastApi)
     .then((res) => res.json())
     .then((data) => {
@@ -680,18 +679,18 @@ function fetchForecastApi(fullForecastApi) {
       document.querySelector(".error").innerText = "Enter a valid city name ! ";
       output.classList.add("hide");
     });
-}
+};
 
-function imageApiFunc(fullImgApi) {
+const imageApiFunc = (fullImgApi) => {
   const randomImage = Math.trunc(Math.random() * 10);
   fetch(fullImgApi)
     .then((response) => response.json())
     .then((json) => {
       bgImg.src = json.results[randomImage].urls.regular;
     });
-}
+};
 
-function imageTimeCheck(oTime, iconSrc, season) {
+const imageTimeCheck = (oTime, iconSrc, season) => {
   if (
     (oTime.slice(0, 2) > "20" && oTime.slice(0, 2) <= "24") ||
     (oTime >= "00:00" && oTime.slice(0, 2) <= "04")
@@ -733,9 +732,9 @@ function imageTimeCheck(oTime, iconSrc, season) {
       "&client_id=9kvb2pRRvKu2HUIy1cBVjsnRVC9wjPkBSlujgUAqwI4";
   }
   imageApiFunc(fullImgApi);
-}
+};
 
-function fetchApi(fullApiUrl) {
+const fetchApi = (fullApiUrl) => {
   fetch(fullApiUrl)
     .then((response) => response.json())
     .then((json) => {
@@ -781,9 +780,9 @@ function fetchApi(fullApiUrl) {
       output.classList.add("hide");
       document.querySelector(".outputForecast").classList.add("hide");
     });
-}
+};
 
-function findWeather() {
+const findWeather = () => {
   let txt = inputCity.value;
   output.classList.remove("hide");
   document.querySelector(".forecastInDetail").classList.add("hide");
@@ -799,11 +798,11 @@ function findWeather() {
     output.classList.add("hide");
     document.querySelector(".outputForecast").classList.add("hide");
   }
-}
+};
 
 btnCheck.addEventListener("click", findWeather);
 
-function weatherForecastThreeDays() {
+const weatherForecastThreeDays = () => {
   let txt = inputCity.value;
   document.querySelector(".outputForecast").classList.remove("hide");
   document.querySelector(".forecastInDetail").classList.add("hide");
@@ -818,7 +817,7 @@ function weatherForecastThreeDays() {
     document.querySelector(".outputForecast").classList.add("hide");
     output.classList.add("hide");
   }
-}
+};
 
 btnForcast.addEventListener("click", weatherForecastThreeDays);
 
