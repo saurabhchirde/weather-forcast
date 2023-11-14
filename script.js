@@ -672,7 +672,7 @@ const fetchForecastApi = (fullForecastApi) => {
         "˚C";
 
       document.querySelector(".forecastFooter").innerHTML =
-        "<a href=https://twitter.com/SaurabhChirde>by saurabhchirde</a>";
+        "<a href=https://twitter.com/SaurabhChirde>with 💖 by saurabhchirde</a>";
     })
     .catch(() => {
       document.querySelector(".outputForecast").classList.add("hide");
@@ -768,7 +768,7 @@ const fetchApi = (fullApiUrl) => {
       timeEl.innerText = `Last Update: ${oTime} ⏱`;
       document.querySelector(".onlyTimeZone").innerText = `Time Zone: ${tz}`;
       footerEl.innerHTML =
-        "<a href=https://twitter.com/SaurabhChirde>by saurabhchirde</a>";
+        "<a href=https://twitter.com/SaurabhChirde>with 💖 saurabhchirde</a>";
 
       var season = partial.replace(" ", "-");
       var iconSrc = json.current.condition.icon.slice(-7);
